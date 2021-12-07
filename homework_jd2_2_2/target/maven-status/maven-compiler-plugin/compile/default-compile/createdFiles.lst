@@ -1,0 +1,10 @@
+by\it\shcharbunou\calculator\services\calculator_service\calculator_behavior\CalculatorService.class
+by\it\shcharbunou\calculator\exceptions\DivisionByZeroException.class
+by\it\shcharbunou\calculator\application\CalculatorApplication.class
+by\it\shcharbunou\calculator\services\client_service\client_behavior\Client.class
+by\it\shcharbunou\calculator\utils\Messages.class
+by\it\shcharbunou\calculator\application\Runner.class
+by\it\shcharbunou\calculator\services\client_service\ClientService.class
+by\it\shcharbunou\calculator\utils\ApplicationReservedWords.class
+by\it\shcharbunou\calculator\utils\Operators.class
+by\it\shcharbunou\calculator\services\calculator_service\CalculatorServiceImpl.class

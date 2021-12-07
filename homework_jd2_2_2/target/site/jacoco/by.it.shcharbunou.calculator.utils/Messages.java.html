@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Messages.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">homework_jd2_2_2</a> &gt; <a href="index.source.html" class="el_package">by.it.shcharbunou.calculator.utils</a> &gt; <span class="el_source">Messages.java</span></div><h1>Messages.java</h1><pre class="source lang-java linenums">package by.it.shcharbunou.calculator.utils;
+
+<span class="nc" id="L3">public enum Messages {</span>
+
+<span class="nc" id="L5">    INPUT_OPERAND_ERROR_MESSAGE(&quot;Error: Value is not double type.&quot;),</span>
+<span class="nc" id="L6">    INPUT_OPERATOR_ERROR_MESSAGE(&quot;Error: Value is not operator.&quot;),</span>
+<span class="nc" id="L7">    INPUT_CLIENT_ANSWER_ERROR_MESSAGE(&quot;Error: Unknown command&quot;),</span>
+<span class="nc" id="L8">    UNKNOWN_ERROR_MESSAGE(&quot;UNKNOWN ERROR!&quot;),</span>
+
+<span class="nc" id="L10">    START_MESSAGE(&quot;Calculator started!&quot;),</span>
+<span class="nc" id="L11">    INPUT_OPERAND_MESSAGE(&quot;Input operand number &quot;),</span>
+<span class="nc" id="L12">    INPUT_OPERATOR_MESSAGE(&quot;Input operator:&quot;),</span>
+<span class="nc" id="L13">    EXIT_MESSAGE(&quot;Would you like to exit? (Y/N)&quot;);</span>
+
+    private final String message;
+
+    public String getMessage() {
+<span class="nc" id="L18">        return message;</span>
+    }
+
+<span class="nc" id="L21">    Messages(String message) {</span>
+<span class="nc" id="L22">        this.message = message;</span>
+<span class="nc" id="L23">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
