@@ -13,11 +13,11 @@ Dashboard for Project: https://github.com/orgs/JD2-86/projects/1
 == Workflow
 
 * Одному занятию (т.е. практике и домашней работе) соответствует один *issue*.
+* При работе над *issue*, она ДОЛЖНА находится в АКТУАЛЬНОМ состоянии на *dashboard*.
 * Для управления выполнение работ на проекте будет использовать следующий workflow:
 
 image:workflow-java-enterprise.svg[Workflow]
 
-* При работе над *issue*, она ДОЛЖНА находится в АКТУАЛЬНОМ состоянии на *dashboard*.
 
 === Git flow: feature-branch
 
