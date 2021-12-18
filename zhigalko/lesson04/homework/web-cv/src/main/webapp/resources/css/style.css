@@ -1,0 +1,79 @@
+html {
+    font-family: "Roboto";
+    src: url(https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300&family=Roboto:ital,wght@0,100;0,300;0,400;1,100&display=swap) format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+header,
+footer {
+    padding: 30px;
+    background-color: #d1e6ff;
+    text-align: center;
+}
+
+header,
+body {
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: aliceblue;
+    line-height: 2em;
+}
+
+main {
+    position: relative;
+    width: 1020px;
+    margin: 0 auto;
+    align-content: center;
+}
+
+img {
+    border: 2px solid black;
+    border-radius: 1em;
+    min-width: 320px;
+    height: 320px;
+    display: inline;
+    box-sizing: border-box;
+    position: absolute;
+    top: 3em;
+    left: 9em
+}
+
+a {
+    text-decoration: none;
+    color: rgb(47, 51, 51);
+}
+
+a:hover {
+    color: #154088;
+    border-bottom: .07em solid;
+}
+
+footer {
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    bottom: 0px;
+}
+
+section {
+    display: inline-block;
+    width: 1020px;
+    padding-bottom: 0em;
+    margin-left: 9em;
+    border-bottom: 2px solid rgba(105, 105, 105, 0.5);
+}
+
+.about-me-contact {
+    width: 38em;
+    margin-top: 6em;
+    padding-bottom: 10%;
+    float: right;
+}
+
+.experience {
+    border-bottom: none;
+}
+
