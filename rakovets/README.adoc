@@ -1,5 +1,0 @@
-= Rakovets
-
-== Lesson 5
-
-Link to AWS:
