@@ -1,0 +1,163 @@
+= Руководство по Hibernate.
+
+== Соединяющие файлы.
+
+Чаще всего, когда имеется дело с ORM фреймворком, связи между объектами и таблицами в базе данных (далее – БД) указываются в XML – файле. +
+POJO – класс `Developer.java`
+
+[source,java]
+----
+package net.proselyte.hibernate.pojo;
+
+public class Developer {
+    private int id;
+    private String firstName;
+    private String lastName;
+    private String specialty;
+    private int experience;
+
+    /**
+     * Default Constructor
+     */
+    public Developer() {
+    }
+
+    /**
+     * Plain constructor
+     */
+    public Developer(int id, String firstName, String lastName, String specialty, int experience) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.specialty = specialty;
+        this.experience = experience;
+    }
+
+
+    }
+
+
+    /**
+     * Getters and Setters
+     */
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getSpecialty() {
+        return specialty;
+    }
+
+    public void setSpecialty(String specialty) {
+        this.specialty = specialty;
+    }
+
+    public int getExperience() {
+        return experience;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
+
+    /**
+     * toString method (optional)
+     */
+    @Override
+    public String toString() {
+        return "Developer{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", specialty='" + specialty + '\'' +
+                ", experience=" + experience +
+                '}';
+    }
+}
+----
+
+Теперь создадим таблицу в БД +
+`HIBERNATE_DEVELOPERS`:
+
+----
+CREATE TABLE HIBERNATE_DEVELOPERS(
+   ID INT NOT NULL AUTO_INCREMENT,
+   FIRST_NAME VARCHAR(50) DEFAULT NULL,
+   LAST_NAME VARCHAR(50) DEFAULT NULL,
+   SPECIALTY VARCHAR(50) DEFAULT NULL,
+   EXPERIENCE INT DEFAULT NULL,
+   PRIMARY KEY(ID)
+);
+----
+
+На данный момент есть две независимых друг от друга сущности: POJO – класс `Developer.java` и таблица в БД `HIBERNATE_DEVELOPERS`.
+Для того чтобы связать их друг с другом и получить возможность сохранять значения полей класса, необходимо объяснить, как именно это делать Hibernate framework.
+Чтобы это сделать, создаём конфигурационной XML – файл `Developer.hbm.xml` :
+
+----
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "https://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="net.proselyte.hibernate.pojo.Developer" table="HIBERNATE_DEVELOPERS">
+        <meta attribute="class-description">
+            This class contains developer's details.
+        </meta>
+        <id name="id" type="int" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="firstName" column="first_name" type="string"/>
+        <property name="lastName" column="last_name" type="string"/>
+        <property name="specialty" column="last_name" type="string"/>
+        <property name="experience" column="salary" type="int"/>
+    </class>
+----
+
+На данный момент нельзя сказать, что приложение готово, но есть часть необходимых конфигураций:
+
+`<hibernate-mapping>` +
+Это ключевой тег, который должен быть в каждом XML – файле для связывания (mapping).
+Внутри этого тега конфигурируем связи.
+
+* `<class>` +
+Тег `<class>` используется для того, чтобы указать связь между POJO – классов и таблицей в БД. Имя класса указывается с помощью свойства `name`, имя таблицы в БД – с помощью свойства `table`.
+
+* `<meta>` +
+Опциональный (необязательный) тег, внутри которого можно добавить описание класса.
+
+* `<id>` +
+Тег `<id>` связывает уникальный идентификатор ID в POJO – классе и первичный ключ (primary key) в таблице БД. Свойство `name` соединяет поле класса со свойством `column`, которое указывает нам колонку в таблице БД. Свойство `type` определяет тип связывания (mapping) и используется для конвертации типа данных Java в тип данных SQL.
+
+* `<generator>` +
+Этот тег внутри тега <id> используется для того, что генерировать первичные ключи автоматически.
+Если указать это свойство `native`, как в примере, приведённом выше, то Hibernate сам выберет алгоритм `(identity, hilo, sequence)` в зависимости от возможностей БД.
+
+* `<property>` +
+Этот тег используется для того, чтобы связать (map) конкретное поле POJO – класса с конкретной колонкой в таблице БД. Свойство `name` указывает поле в классе, в то время как свойство `column` указывает на колонку в таблице БД. Свойство `type` указывает тип связывания (mapping) и конвертирует тип данных Java в тип данных SQL.
+
+Существуют также и другие теги, которые могут быть использованы в конфигурационном XML – файле и не были указаны в этой теме.
+Но в течение всего цикла статей, посвящённых Hibernate, постараемся поговорить о большинстве из них.
+А в этой статье описаны основы применения соединяющих файлов *(mapping files)*
+
+
