@@ -36,7 +36,7 @@ public class ReadFromServlet extends HttpServlet implements GetAccessToDB {
                     writer.write("<th>Username</th>");
                     for (Long id : listOfId) {
                         writer.write("<tr>");
-                        writer.write("<td> <a href=\"/view/users/?id=" + id + "\">" + id + "</a></td>");
+                        writer.write("<td> <a href=\"../view/users/?id=" + id + "\">" + id + "</a></td>");
                         writer.write("<td>" + db.getUserFromDB(id).getFirstName() + "</td>");
                         writer.write("<td>" + db.getUserFromDB(id).getLastName() + "</td>");
                         writer.write("<td>" + db.getUserFromDB(id).getEmail() + "</td>");
