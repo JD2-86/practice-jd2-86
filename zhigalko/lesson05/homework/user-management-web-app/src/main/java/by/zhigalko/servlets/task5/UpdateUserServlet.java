@@ -34,7 +34,8 @@ public class UpdateUserServlet extends HttpServlet implements GetAccessToDB {
                     userFromDB.setPassword(newPassword);
                     db.putUserIntoDB(id,userFromDB);
                     getServletContext().setAttribute("db", db);
-                    response.sendRedirect("/view/users/");
+                    String path = request.getContextPath() + "/view/users/";
+                    response.sendRedirect(path);
                 } else {
                     writer.write("<h1>DB can't find this user</h1>");
                 }
