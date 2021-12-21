@@ -31,7 +31,7 @@ public class NewUserServlet extends HttpServlet {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
 
-        String[] line = {id, firstName, lastName, userName, email, password};
+        String[] line = {id, firstName, lastName, userName, password, email};
 
 
         usersFinderWriter.writeUser(line,req);
