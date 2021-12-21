@@ -9,6 +9,8 @@ import java.io.*;
  */
 
 public class UsersFinderWriter {
+    private static Integer userID = 10;
+
     protected void writeUser(String[] line, HttpServletRequest request) {
         WorkerWithFile file = new WorkerWithFile();
 
@@ -40,5 +42,10 @@ public class UsersFinderWriter {
             e.printStackTrace();
         }
         return list;
+    }
+
+    protected static String getID() {
+        userID++;
+        return Integer.toString(userID);
     }
 }

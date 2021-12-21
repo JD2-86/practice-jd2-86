@@ -24,7 +24,7 @@ public class NewUserServlet extends HttpServlet {
 
         resp.setContentType("text/html");
 
-        String id = req.getParameter("id");
+        String id = usersFinderWriter.getID();
         String firstName = req.getParameter("firstName");
         String lastName = req.getParameter("lastName");
         String userName = req.getParameter("userName");
