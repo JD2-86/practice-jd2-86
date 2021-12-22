@@ -1,6 +1,6 @@
-package by.it.shcharbunou.jd1.jd1_1.homework.jd1_1_2.calculator.services.calculator_service.calculator_behavior;
+package calculator.services.calculator_service.calculator_behavior;
 
-import by.it.shcharbunou.jd1.jd1_1.homework.jd1_1_2.calculator.exceptions.DivisionByZeroException;
+import calculator.exceptions.DivisionByZeroException;
 
 public interface CalculatorService {
 

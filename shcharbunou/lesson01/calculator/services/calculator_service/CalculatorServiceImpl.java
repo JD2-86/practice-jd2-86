@@ -1,7 +1,7 @@
-package by.it.shcharbunou.jd1.jd1_1.homework.jd1_1_2.calculator.services.calculator_service;
+package calculator.services.calculator_service;
 
-import by.it.shcharbunou.jd1.jd1_1.homework.jd1_1_2.calculator.exceptions.DivisionByZeroException;
-import by.it.shcharbunou.jd1.jd1_1.homework.jd1_1_2.calculator.services.calculator_service.calculator_behavior.CalculatorService;
+import calculator.exceptions.DivisionByZeroException;
+import calculator.services.calculator_service.calculator_behavior.CalculatorService;
 
 public class CalculatorServiceImpl implements CalculatorService {
 

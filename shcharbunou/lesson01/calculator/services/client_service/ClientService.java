@@ -1,9 +1,9 @@
-package by.it.shcharbunou.jd1.jd1_1.homework.jd1_1_2.calculator.services.client_service;
+package calculator.services.client_service;
 
-import by.it.shcharbunou.jd1.jd1_1.homework.jd1_1_2.calculator.services.client_service.client_behavior.Client;
-import by.it.shcharbunou.jd1.jd1_1.homework.jd1_1_2.calculator.utils.ApplicationReservedWords;
-import by.it.shcharbunou.jd1.jd1_1.homework.jd1_1_2.calculator.utils.Messages;
-import by.it.shcharbunou.jd1.jd1_1.homework.jd1_1_2.calculator.utils.Operators;
+import calculator.services.client_service.client_behavior.Client;
+import calculator.utils.ApplicationReservedWords;
+import calculator.utils.Messages;
+import calculator.utils.Operators;
 
 import java.util.Scanner;
 

@@ -1,11 +1,11 @@
-package by.it.shcharbunou.jd1.jd1_1.homework.jd1_1_2.calculator.application;
+package calculator.application;
 
-import by.it.shcharbunou.jd1.jd1_1.homework.jd1_1_2.calculator.exceptions.DivisionByZeroException;
-import by.it.shcharbunou.jd1.jd1_1.homework.jd1_1_2.calculator.services.calculator_service.CalculatorServiceImpl;
-import by.it.shcharbunou.jd1.jd1_1.homework.jd1_1_2.calculator.services.calculator_service.calculator_behavior.CalculatorService;
-import by.it.shcharbunou.jd1.jd1_1.homework.jd1_1_2.calculator.services.client_service.ClientService;
-import by.it.shcharbunou.jd1.jd1_1.homework.jd1_1_2.calculator.services.client_service.client_behavior.Client;
-import by.it.shcharbunou.jd1.jd1_1.homework.jd1_1_2.calculator.utils.Messages;
+import calculator.exceptions.DivisionByZeroException;
+import calculator.services.calculator_service.CalculatorServiceImpl;
+import calculator.services.calculator_service.calculator_behavior.CalculatorService;
+import calculator.services.client_service.ClientService;
+import calculator.services.client_service.client_behavior.Client;
+import calculator.utils.Messages;
 
 import java.util.Scanner;
 

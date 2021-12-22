@@ -1,5 +1,9 @@
 = Shcharbunou
 
+== Lesson 5
+
+build.bat [Building jar file]
+
 == Lesson 4
 
 Link to AWS: http://ec2-54-145-133-219.compute-1.amazonaws.com:8080/maven-webapp-shcharbunouCV/ [My CV]

@@ -1,4 +1,4 @@
-package by.it.shcharbunou.jd1.jd1_1.homework.jd1_1_2.calculator.exceptions;
+package calculator.exceptions;
 
 public class DivisionByZeroException extends Exception {
 
