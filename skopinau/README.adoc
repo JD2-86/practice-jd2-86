@@ -2,8 +2,4 @@
 
 == Lesson 4
 
-Link to AWS:
-
-== Lesson 5
-
-Link to AWS:
+Link to AWS: http://18.212.199.153:8080/curriculum-vitae/
