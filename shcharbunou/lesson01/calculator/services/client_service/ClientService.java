@@ -8,7 +8,6 @@ import calculator.utils.Operators;
 import java.util.Scanner;
 
 public class ClientService implements Client {
-
     @Override
     public double inputOperand(Scanner scanner) {
         boolean isCorrect;

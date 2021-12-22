@@ -1,7 +1,6 @@
 package calculator.utils;
 
 public enum ApplicationReservedWords {
-
     Y("y"),
     N("n");
 

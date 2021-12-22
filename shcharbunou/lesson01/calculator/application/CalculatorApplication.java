@@ -10,7 +10,6 @@ import calculator.utils.Messages;
 import java.util.Scanner;
 
 public class CalculatorApplication {
-
     private static final Scanner CLI = new Scanner(System.in);
     private final Client client = new ClientService();
     private final CalculatorService calculatorService = new CalculatorServiceImpl();

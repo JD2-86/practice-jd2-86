@@ -4,7 +4,6 @@ import calculator.exceptions.DivisionByZeroException;
 import calculator.services.calculator_service.calculator_behavior.CalculatorService;
 
 public class CalculatorServiceImpl implements CalculatorService {
-
     @Override
     public double add(double a, double b) {
         return a + b;
