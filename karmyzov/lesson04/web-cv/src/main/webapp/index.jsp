@@ -71,7 +71,7 @@
             <ul>
                 <li>Spring / MVC / Security</li>
                 <li>Hibernate</li>
-                <li>MySQL</li>
+                <li>MySQL</li>git
                 <li>Maven</li>
                 <li>Tomcat</li>
                 <li>JUnit</li>
