@@ -3,7 +3,7 @@ body {
     font-family: 'Lobster', cursive;
     line-height: 1.5;
     font-size: 20px;
-    background: url("bck.jpg");
+    background: url("../images/bck.jpg");
     color: white;
     text-shadow: grey;
 }
@@ -18,14 +18,14 @@ header {
     padding-top: 25px;
     width: 100%;
     margin: 0 auto;
-    background: url("1.jpg");
+    background: url("../images/1.jpg");
     color: black;
     font-size: 30px;
     text-align: center;
 }
 
 footer {
-    background: url("1.jpg");
+    background: url("../images/1.jpg");
     position:fixed;
     left:0px;
     bottom:0px;
