@@ -1,0 +1,20 @@
+body {
+    background-color: #ccc;
+}
+.title {
+    font-size: 20px;
+}
+.avatar {
+    display: block;
+    height: 250px;
+    margin-left: 100px;
+    border-radius: 10%;
+}
+.contacts {
+    margin-top: -200px;
+    margin-left: 400px;
+    padding-bottom: 50px;
+}
+.data {
+    margin-left: 20px;
+}
