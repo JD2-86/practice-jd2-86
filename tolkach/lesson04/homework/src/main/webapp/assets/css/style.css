@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    font-family: 'Lobster', cursive;
+    line-height: 1.5;
+    font-size: 20px;
+    background: url("../images/bck.jpg");
+    color: white;
+    text-shadow: grey;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+header {
+    padding-top: 25px;
+    width: 100%;
+    margin: 0 auto;
+    background: url("../images/1.jpg");
+    color: black;
+    font-size: 30px;
+    text-align: center;
+}
+
+footer {
+    background: url("../images/1.jpg");
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:50px;
+    width:100%;
+    color: black;
+}
+
+section {
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 2%;
+    border-bottom: 3px solid rgba(105, 105, 105, 0.5);
+}
+
+.my-photo {
+    float: right;
+}
+
+.photo {
+    font-size: 30px;
+    border-radius: 35%;
+    padding: 30px 15px;
+    width: 30%;
+    height: 30%;
+    float: right;
+}
+
+.right {
+    float: right;
+    width: 50%;
+}
+
+.left {
+    float: left;
+    width: 50%;
+}
+
+.contacts {
+    width: 60%;
+    margin-top: 3%;
+    float: left;
+}
