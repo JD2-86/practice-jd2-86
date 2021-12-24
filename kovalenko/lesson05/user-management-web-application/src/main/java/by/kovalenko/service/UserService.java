@@ -9,5 +9,7 @@ public interface UserService {
     List<User> getUsers();
     User add(User user);
     List<User> add(List<User> users);
+    User getById(Long id);
 
+    List<User> getUsersPartition(Integer page, Integer pageSize);
 }

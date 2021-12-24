@@ -7,7 +7,7 @@ import jakarta.servlet.annotation.*;
 import by.kovalenko.service.UserInitializer;
 import by.kovalenko.service.impl.UserInitializerImpl;
 
-@WebServlet(urlPatterns = "/admin/init")
+@WebServlet( urlPatterns = "/admin/init")
 public class InitServlet extends HttpServlet {
     private final UserInitializer userInitializer = UserInitializerImpl.getInstance();
 
