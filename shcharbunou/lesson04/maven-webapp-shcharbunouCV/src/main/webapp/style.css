@@ -1,0 +1,72 @@
+body {
+    background-color: lightgrey;
+    font-family: 'Noto Sans', 'Tahoma', sans-serif;
+    font-size: 18px;
+    line-height: 2em;
+    box-sizing: border-box;
+}
+
+section p {
+    text-align: justify;
+}
+
+a {
+    margin-left: 0.5em;
+    color: black;
+    text-decoration: none;
+}
+
+header,
+footer {
+    color: white;
+    background-color: dimgrey;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0em 0em 1em;
+    padding: 1em;
+}
+
+footer p {
+    margin: 1em 0em 0em;
+    padding: 1em;
+}
+
+img {
+    width: 16em;
+    height: 16em;
+    border-radius: 1em;
+    border: 3px solid rgba(105, 105, 105, 0.5);
+    overflow: hidden;
+    object-fit: cover;
+    object-position: -0% 10%;
+}
+
+section {
+    display: inline-block;
+    width: 1020px;
+    padding-bottom: 2%;
+    border-bottom: 3px solid rgba(105, 105, 105, 0.5);
+}
+
+section.additional {
+    border-bottom: 0px;
+}
+
+.wrapper {
+    width: 1020px;
+    margin: 0 auto;
+    align-content: center;
+}
+
+.about-me-photo {
+    width: 40%;
+    float: left;
+}
+
+.about-me-contact {
+    width: 60%;
+    margin-top: 3%;
+    float: left;
+}
