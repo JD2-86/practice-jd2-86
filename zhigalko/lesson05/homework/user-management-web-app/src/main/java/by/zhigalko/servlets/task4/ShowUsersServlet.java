@@ -23,26 +23,21 @@ public class ShowUsersServlet extends HttpServlet implements GetAccessToDB {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String page = request.getParameter("page");
         String pageSize = request.getParameter("pageSize");
-
         try (PrintWriter writer = response.getWriter()) {
-            if (page == null || pageSize == null) {
-                writer.write("<h1> Please enter page and page size in query string, for example: ?page=1&pageSize=3");
+            UserStorage db = getAccess();
+            if (db == null) {
+                writer.write("<h1>Such DB doesn't exist</h1>");
             } else {
-                UserStorage db = getAccess();
-                if (db == null) {
-                    writer.write("<h1>Such DB doesn't exist</h1>");
-                } else {
-                    Map<Long, User> database = db.getDatabase();
-                    Set<Long> keySet = database.keySet();
-                    long pageNumber = Long.parseLong(page);
-                    long pageSizeNumber = Long.parseLong(pageSize);
-                    List<Long> listOfId = keySet.stream()
-                            .skip((pageNumber - 1) * pageSizeNumber)
-                            .limit(pageSizeNumber)
-                            .collect(Collectors.toList());
-                    request.setAttribute("listOfId",listOfId);
-                    getServletContext().getRequestDispatcher("/read-servlet").forward(request,response);
-                }
+                Map<Long, User> database = db.getDatabase();
+                Set<Long> keySet = database.keySet();
+                long pageNumber = Long.parseLong(page);
+                long pageSizeNumber = Long.parseLong(pageSize);
+                List<Long> listOfId = keySet.stream()
+                        .skip((pageNumber - 1) * pageSizeNumber)
+                        .limit(pageSizeNumber)
+                        .collect(Collectors.toList());
+                request.setAttribute("listOfId", listOfId);
+                getServletContext().getRequestDispatcher("/read-servlet").forward(request, response);
             }
         }
     }

@@ -12,16 +12,20 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "ServletViewUser", value = "/view/users/")
+@WebServlet(name = "ServletViewUser", value = "/view/users/*")
 public class ServletViewUser extends HttpServlet implements GetAccessToDB {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String queryId = request.getParameter("id");
-
         try (PrintWriter writer = response.getWriter()) {
-            if (queryId == null) {
-                writer.write("<h1> Please enter id in query string: for example ?id=5<h/1>");
+            String[] split = request.getRequestURI().split("[^0-9]*");
+            StringBuilder builder = new StringBuilder();
+            for (String s : split) {
+                builder.append(s);
+            }
+            String queryId = builder.toString();
+            if (queryId.isEmpty()) {
+                writer.write("<h1> Please add id in query string: for example /10");
             } else {
                 UserStorage db = getAccess();
                 if (db == null) {
