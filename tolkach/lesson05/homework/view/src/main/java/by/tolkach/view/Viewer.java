@@ -1,10 +1,11 @@
-package by.rolkach.view;
+package by.tolkach.view;
 
 /**
  * Class for building html-code.
  */
 
 public class Viewer {
+
     protected String getText(String[] userData) {
         return  "<p><b>ID</b> " + userData[0] + "</p>" +
                 "<p><b>FirstName</b> " + userData[1] + " </p>" +
@@ -29,7 +30,7 @@ public class Viewer {
     }
     protected String getTableBody(String[] userData) {
         return "  <tr>\n" +
-                "    <td><a href=\"/view/users/" + userData[0] + "\">" + userData[0] + "</a></td>\n" +
+                "    <td><a href=\"users/" + userData[0] + "\">" + userData[0] + "</a></td>\n" +
                 "    <td>" + userData[1] + "</td>  " +
                 "    <td>" + userData[2] + "</td>  " +
                 "    <td>" + userData[3] + "</td>  " +
@@ -58,5 +59,23 @@ public class Viewer {
                 "        <br><br>\n" +
                 "        <input type=\"submit\" value=\"Submit\" />\n" +
                 "    </form>";
+    }
+
+    protected String getPageSelect(String page) {
+        return "<form action=\"?page=\"" + page + "method=\"POST\">\t\t\n" +
+                "   Page: <input name=\"page\"/>\n" +
+                "   <br><br>\n" +
+                "   <input type=\"submit\" value=\"Select Page\" />\n" +
+                "</form>" +
+                "<br>";
+    }
+
+    protected String getPageSizeSelect(String pageSize) {
+        return "<form action=\"?pageSize=\"" + pageSize + "method=\"POST\">\t\t\n" +
+                "   PageSize: <input name=\"pageSize\"/>\n" +
+                "   <br><br>\n" +
+                "   <input type=\"submit\" value=\"Select PageSize\" />\n" +
+                "</form>" +
+                "<br>";
     }
 }

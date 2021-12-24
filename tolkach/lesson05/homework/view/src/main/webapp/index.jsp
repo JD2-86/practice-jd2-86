@@ -2,10 +2,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>UserView</title>
+    <title>JSP - Hello World</title>
 </head>
 <body>
-<h1><%= "Hello!" %></h1>
+<h1><%= "Hello!" %>
+</h1>
 <br/>
 <form action="users">
     <input type="submit" value="See users">

@@ -1,4 +1,4 @@
-package by.rolkach.view;
+package by.tolkach.view;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -15,7 +15,8 @@ import java.io.PrintWriter;
  */
 
 @WebServlet(urlPatterns = "/api/users")
-public class NewUserServlet extends HttpServlet {
+public class NewUserServlet extends HttpServlet{
+
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

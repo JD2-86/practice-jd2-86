@@ -1,4 +1,4 @@
-package by.rolkach.view;
+package by.tolkach.view;
 
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -8,6 +8,7 @@ import java.io.*;
  * Class for writing and finding users in file.
  */
 
+
 public class UsersFinderWriter {
     private static Integer userID = 10;
 
@@ -15,10 +16,10 @@ public class UsersFinderWriter {
         WorkerWithFile file = new WorkerWithFile();
 
         try (BufferedWriter writer = new BufferedWriter(
-                    new FileWriter(file.getListOfUsers(request),true))) {
-                writer.write(line[0] + ";" + line[1] + ";" + line[2] + ";" + line[3] +
-                        ";" + line[4] + ";" + line[5] + ";");
-                writer.newLine();
+                new FileWriter(file.getListOfUsers(request),true))) {
+            writer.write(line[0] + ";" + line[1] + ";" + line[2] + ";" + line[3] +
+                    ";" + line[4] + ";" + line[5] + ";");
+            writer.newLine();
         } catch (IOException e) {
             e.printStackTrace();
         }
