@@ -1,0 +1,16 @@
+header,
+main,
+footer {
+    width: 100%;
+    text-align: center;
+}
+header,
+footer {
+    background-color: darkgrey;
+}
+header{
+    margin-bottom: 20px;
+}
+main {
+    margin: -20px 0 -20px;
+}
