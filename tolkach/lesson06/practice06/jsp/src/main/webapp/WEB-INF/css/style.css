@@ -1,0 +1,10 @@
+header {
+    background-color: darkgray;
+}
+
+footer {
+    background-color: darkgray;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
