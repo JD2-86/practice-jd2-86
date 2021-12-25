@@ -9,28 +9,26 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class UserInitializerImpl implements UserInitializer {
-
     private final UserService usersService = UserServiceImpl.getInstance();
     private final AtomicBoolean isInit = new AtomicBoolean();
     private static final UserInitializer INSTANCE = new UserInitializerImpl();
 
     @Override
     public int init() {
-        if (isInit.compareAndSet(false, true)){
-            List<User> users = new ArrayList<>();
+        List<User> users = new ArrayList<>();
+        if (isInit.compareAndSet(false, true)) {
             for (int i = 0; i < 10; i++) {
-                users.add(new User("Ivan" + i, "Ivanov" + i, "Ivanov" + i + "@gmail.com", "userIvan" + i, "123"));
+                users.add(new User("Ivan" + (i + 1), "Ivanov" + (i + 1), "Ivanov" + (i + 1) + "@gmail.com", "userIvan" + (i + 1), "123"));
             }
             usersService.add(users);
-            return users.size();
         }
-        return 0;
+        return users.size();
     }
 
     private UserInitializerImpl() {
     }
 
-    public static UserInitializer getInstance(){
+    public static UserInitializer getInstance() {
         return INSTANCE;
     }
 }

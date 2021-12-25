@@ -21,15 +21,22 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter writer = response.getWriter();
-        Long id = null;
+        long id;
         try {
             id = Long.parseLong(request.getPathInfo().substring(1));
             if (id < 0) {
                 throw new UserNotFoundException();
             }
             User user = userService.getById(id);
-            writer.write("user info: " + user);
             response.setContentType("text/html");
+            writer.write("<html><body>");
+            writer.write("<h1> User info </h1>");
+            writer.write("<p> Id: " + user.getId() + "</p>");
+            writer.write("<p> FirstName: " + user.getFirstName() + "</p>");
+            writer.write("<p> LastName: " + user.getLastName() + "</p>");
+            writer.write("<p> Email: " + user.getEmail() + "</p>");
+            writer.write("<p> UserName: " + user.getUserName() + "</p>");
+            writer.write("</body></html>");
         } catch (UserNotFoundException e) {
             response.setStatus(404);
         } catch (Exception e) {

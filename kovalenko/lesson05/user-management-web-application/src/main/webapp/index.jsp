@@ -2,12 +2,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>JSP - Lesson 5</title>
 </head>
 <body>
-<h1><%= "Hello World!" %>
+<h1><%= "Options page" %>
 </h1>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+<p><a href="${pageContext.request.contextPath}/admin/init">Initialize 10 users</a></p>
+<p><a href="${pageContext.request.contextPath}/view/users/*">Inferring the user information</a> Instead of * in the
+    address bar, enter a user ID</p>
+<p><a href="${pageContext.request.contextPath}/view/command/create-user">Create a new user</a></p>
+<p><a href="${pageContext.request.contextPath}/view/users">User information in tabular form</a> Enter a page and
+    pageSize in the address line as parameters</p>
 </body>
 </html>

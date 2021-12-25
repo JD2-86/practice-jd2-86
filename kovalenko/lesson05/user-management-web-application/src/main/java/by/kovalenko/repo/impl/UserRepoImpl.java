@@ -12,20 +12,20 @@ public class UserRepoImpl implements UserRepo {
     private final AtomicLong idProvider = new AtomicLong();
     private static final UserRepo INSTANCE = new UserRepoImpl();
 
-    public User add(User user){
+    public User add(User user) {
         Long id = idProvider.incrementAndGet();
         user.setId(id);
         users.add(user);
         return user;
     }
 
-    public List<User> add(List<User> users){
-        users.forEach(user->user.setId(idProvider.incrementAndGet()));
+    public List<User> add(List<User> users) {
+        users.forEach(user -> user.setId(idProvider.incrementAndGet()));
         this.users.addAll(users);
         return users;
     }
 
-    public List<User> getUsers(){
+    public List<User> getUsers() {
         return users;
     }
 

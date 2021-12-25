@@ -9,7 +9,6 @@ import by.kovalenko.service.UserService;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
-
     private final UserRepo usersRepo = UserRepoImpl.getInstance();
     private static final UserService INSTANCE = new UserServiceImpl();
 
@@ -24,7 +23,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getById(Long id) {
         return usersRepo.getUsers().stream()
-                .filter(user -> user.getId() == id)
+                .filter(user -> user.getId().equals(id))
                 .findFirst()
                 .orElseThrow(UserNotFoundException::new);
     }

@@ -24,34 +24,47 @@ public class UsersServlet extends HttpServlet {
         PrintWriter writer = response.getWriter();
 
         try {
-            Integer page = Integer.parseInt(request.getParameter("page"));
-            Integer pageSize = Integer.parseInt(request.getParameter("pageSize"));
+            int page = Integer.parseInt(request.getParameter("page"));
+            int pageSize = Integer.parseInt(request.getParameter("pageSize"));
             if (page < 1 || pageSize < 1) {
                 throw new Exception();
             }
+            if (pageSize > userService.getUsers().size()) {
+                pageSize = userService.getUsers().size();
+            }
             List<User> users = userService.getUsersPartition(page, pageSize);
-            if (users.isEmpty()){
+            if (users.isEmpty()) {
                 throw new UserNotFoundException();
             }
-            writer.write("<table>");
             String contextPath = request.getContextPath();
+            writer.write("<html>");
+            writer.write("<head>");
+            writer.write("<meta charset=\"utf-8\">");
+            writer.write("<table border=\"1\">User table");
+            writer.write("</head>");
+            writer.write("<body>");
+            writer.write("<caption>User table</caption>");
+            writer.write("<tr>");
+            writer.write("<th>User id</th>");
+            writer.write("<th>FirstName</th>");
+            writer.write("<th>LastName</th>");
+            writer.write("<th>Email</th>");
+            writer.write("<th>UserName</th>");
+            writer.write("</tr>");
             users.forEach(user -> {
-                writer.write("<tr>");
-                writer.write("<td>");
-                writer.write("user id: </br> <a href='" + contextPath + "/view/users/" + user.getId() + "'> " + user.getId() + "</a>");
-                writer.write("</td>");
-                writer.write("user name: " + user.getUserName());
-                writer.write("</tr>");
+                writer.write("<tr><td><a href=" + contextPath + "/view/users/" + user.getId() + "> " + user.getId() + "</a></td>");
+                writer.write("<td>" + user.getFirstName() + "</td>");
+                writer.write("<td>" + user.getLastName() + "</td>");
+                writer.write("<td>" + user.getEmail() + "</td>");
+                writer.write("<td>" + user.getUserName() + "</td></tr>");
             });
             writer.write("</table>");
-
-
+            writer.write("</body>");
+            writer.write("</html>");
         } catch (UserNotFoundException e) {
             response.setStatus(404);
         } catch (Exception e) {
             response.setStatus(400);
         }
-
-
     }
 }
