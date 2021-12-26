@@ -3,3 +3,12 @@
 == Lesson 04
 
 Link to AWS link:http://ec2-54-144-232-209.compute-1.amazonaws.com:8080/cv/[My CV in AWS]
+
+== Lesson 05
+
+Link to AWS link:http://ec2-54-144-232-209.compute-1.amazonaws.com:8080/umwa/[homework]
+Link to AWS link:http://ec2-54-144-232-209.compute-1.amazonaws.com:8080/practice05/[practice]
+
+== Lesson 06
+
+Link to AWS link:http://ec2-54-144-232-209.compute-1.amazonaws.com:8080/practice06/[practice]
