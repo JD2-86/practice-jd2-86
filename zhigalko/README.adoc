@@ -16,3 +16,4 @@ Link to AWS link:http://ec2-54-144-232-209.compute-1.amazonaws.com:8080/practice
 == Lesson 07
 
 Link to AWS link:http://ec2-54-144-232-209.compute-1.amazonaws.com:8080/practice07/[practice]
+Link to AWS link:http://ec2-54-144-232-209.compute-1.amazonaws.com:8080/superheroes/[homework]

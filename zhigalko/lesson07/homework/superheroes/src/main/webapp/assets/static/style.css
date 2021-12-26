@@ -1,0 +1,122 @@
+html {
+    font-size: 14px;
+}
+nav {
+    width: 100%;
+    background-color: #5db6ff;
+    height: 3em;
+    text-align: center;
+    line-height: 3em;
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: bold;
+    position: relative;
+}
+.header a {
+    text-decoration: none;
+    color: #e5eaff;
+}
+
+a {
+    text-decoration: none;
+    color: #377aff;
+}
+a:hover {
+    color: #154088;
+    border-bottom: .07em solid;
+}
+li {
+    display: inline;
+    margin: 0.5em;
+}
+img {
+    position: absolute;
+    left: 9px;
+    top: -2px;
+}
+.abilities,
+.heroes,
+.one_hero,
+h3 {
+    text-indent: 20em;
+}
+.create-hero-form {
+    margin-left: 20em;
+}
+.input_field,
+.select_abilities{
+    width: 50%;
+    box-sizing:border-box;
+}
+
+
+.select_abilities {
+    background-color: white;
+    border: 1px solid darkgray;
+    cursor: pointer;
+}
+
+.select_abilities:hover {
+    background-color: #e5eaff;
+    border:1px solid #5db6ff;
+}
+
+.save_button {
+    width: 8em;
+    height: 2em;
+    background: forestgreen;
+    color: white;
+    border-radius: 0.5em;
+    border: forestgreen solid 1px;
+    cursor: pointer;
+}
+input[type='radio'],
+label {
+    cursor: pointer;
+}
+
+input[type='radio'] {
+    position: relative;
+    height: 10px;
+    width: 15px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+}
+
+input[type='radio']::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 2px solid dodgerblue;
+}
+
+input[type='radio']:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: dodgerblue;
+    transform: translate(-50%, -50%);
+    visibility: visible;
+}
+.white_square {
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    background: white;
+    top: 4px;
+    left: 15px;
+}
+
+
