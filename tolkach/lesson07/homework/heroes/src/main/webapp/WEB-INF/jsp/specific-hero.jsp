@@ -12,8 +12,11 @@
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-auto">
-                    <br>
-                    Какой-то текст
+                    <% response.getWriter().println("Псевдоним: " + request.getAttribute("log") + "<br>"); %>
+                    <% response.getWriter().println("Реальное имя: " + request.getAttribute("name") + "<br>"); %>
+                    <% response.getWriter().println("Пол: " + request.getAttribute("male") + "<br>"); %>
+                    <% response.getWriter().println("Возраст: " + request.getAttribute("age") + "<br>"); %>
+                    <% response.getWriter().println("Способность: " + request.getAttribute("abil") + "<br>"); %>
                 </div>
             </div>
         </div>
