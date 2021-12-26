@@ -1,0 +1,284 @@
+body {
+  font-family: Roboto;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #2C2A27;
+  background-color: #E5E5E5;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  padding: 10px 0;
+}
+
+
+.cv-left-side-wrapper, .cv-right-side-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+#menu__toggle {
+  opacity: 0;
+}
+
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+}
+
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  left: 0;
+}
+
+.menu__btn {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  width: 26px;
+  height: 26px;
+
+  cursor: pointer;
+  z-index: 1;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+
+  width: 100%;
+  height: 2px;
+
+  background-color: #2C2A27;
+
+  transition-duration: .25s;
+}
+
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+
+.menu__box {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: -100%;
+
+  width: 300px;
+  height: 100%;
+
+  margin: 0;
+  padding: 80px 0;
+
+  list-style: none;
+
+  background-color: #ECEFF1;
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+
+  transition-duration: .25s;
+}
+
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+
+  color: #333;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition-duration: .25s;
+}
+
+.menu__item:hover {
+  background-color: #CFD8DC;
+}
+
+.cv-foto-name {
+  display: flex;
+}
+
+.foto {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column; 
+}
+
+.name {
+  margin-left: 100px;
+  align-self: center;
+}
+
+h1 {
+  visibility: hidden;
+  margin: 0;
+}
+
+h4, .year, .GitHub {
+  font-family: Lora;
+  font-size: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: #2C2A27;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #84522A;
+}
+
+h2, h3 {
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #AD764B;
+}
+
+.profession {
+  text-transform: uppercase;
+  color: #84522A; 
+  font-weight: bold;
+  line-height: 180%; 
+}
+
+.contact-point {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.contact-list {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  line-height: 1;
+}
+
+.about-me {
+  display: inline-block;
+  padding-right: 10%;
+}
+
+pre {
+    margin: 0;
+}
+
+.code-simple {
+  max-width: max-content;
+  padding: 10px;
+  margin-left: 20px;
+  background-color: #DEB392;
+}
+
+.skills-container {
+  width: 80%;
+  height: 5px;
+  background-color: #DEB392;  
+}
+
+.skills {
+  width: 90%;
+  height: 5px;
+  background-color: #AD764B;
+}
+
+.skill-name {
+  margin-bottom: 5px;
+}
+
+.git {
+  width: 60%; 
+}
+  
+.js, .figma {
+  width: 70%; 
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;  
+  border-top: 2px solid #2C2A27;
+  padding-top: 10px;
+  margin: 0;
+}
+
+.year {
+  line-height: 30px;  
+}
+
+@media (min-width: 320px){
+  .container{
+    margin: 15px auto;
+    max-width: 280px;
+      padding:  0 20px;
+      -webkit-box-shadow: -5px 5px 20px 5px rgba(34, 60, 80, 0.3);
+      -moz-box-shadow: -5px 5px 20px 5px rgba(34, 60, 80, 0.3);
+      box-shadow: -5px 5px 20px 5px rgba(34, 60, 80, 0.3);
+  }       
+}
+@media (min-width: 768px){
+  .container {
+      max-width: 720px;
+  }
+
+  main {
+      display: flex;
+      flex-wrap: wrap;
+  }
+
+  .cv-left-side-wrapper {
+      width: 30%;
+  }
+
+  .cv-right-side-wrapper {
+      width: 70%;
+  }  
+  .footer-container {
+      display: flex;
+      align-items: center;
+  }
+}
+
+@media (min-width: 992px){
+  .container{
+      max-width: 960px;
+  }       
+}
