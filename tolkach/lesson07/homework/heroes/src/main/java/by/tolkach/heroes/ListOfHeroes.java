@@ -37,4 +37,17 @@ public class ListOfHeroes {
         }
         return mapOfHeroes;
     }
+
+    public void writeHero(Hero hero, HttpServletRequest request) {
+        File file = new File();
+
+        try (BufferedWriter writer = new BufferedWriter(
+                new FileWriter(file.getListOfHeroes(request),true))) {
+            writer.newLine();
+            writer.write(hero.getLogin() + ";" + hero.getName() + ";" + hero.getAge() + ";" + hero.getMale() + ";"
+            + hero.getAbility());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
