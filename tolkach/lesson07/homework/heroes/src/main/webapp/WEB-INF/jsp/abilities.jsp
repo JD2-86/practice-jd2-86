@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<% Integer i = (Integer) request.getAttribute("CountOfHeroes"); %>
-<!DOCTYPE html>
+<% Integer i = (Integer) request.getAttribute("Count"); %>
+<!DOCTYPE>
 <html>
 <head>
     <jsp:include page="common/css-connect.jsp"/>
@@ -15,7 +15,7 @@
                 <div class="col-md-auto">
                     <br>
                     <%for (int j = 0; j < i; j++) {
-                                response.getWriter().println("<p>" + request.getAttribute("Ability" + j) + "</p>");
+                                response.getWriter().println("<p>" + request.getAttribute("abil" + j) + "</p>");
 
                     }%>
                 </div>

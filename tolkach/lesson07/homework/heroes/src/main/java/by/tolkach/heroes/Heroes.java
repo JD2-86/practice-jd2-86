@@ -15,6 +15,8 @@ public class Heroes extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/html");
+
         ListOfHeroes listOfHeroes = new ListOfHeroes();
         Map<Integer, Hero> map = listOfHeroes.readHeroes(req);
 

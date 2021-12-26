@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<% Integer i = (Integer) request.getAttribute("CountOfHeroes"); %>
+
+<% Integer i = (Integer) request.getAttribute("Count"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,12 +22,14 @@
                         <input type="text" class="form-control" id="name" name="name">
                         <label for="age" class="form-label">Возраст</label>
                         <input type="text" class="form-control" id="age" name="age">
+                        <br>
                         <label class="form-check-label" for="male">Мужчина</label>
-                        <input class="form-check-input" type="radio" name="male" id="male">
+                        <input class="form-check-input" type="radio" name="male" id="male" value="male">
                         <label class="form-check-label" for="female">Женщина</label>
-                        <input class="form-check-input" type="radio" name="male" id="female">
+                        <input class="form-check-input" type="radio" name="male" id="female" value="female">
+                        <br>
                         <select class="form-select" aria-label="Default select example" name="abil">
-                            <option selected>Wealth</option>
+                            <option selected></option>
                             <option value="1">Invisibility</option>
                             <option value="2">Flying</option>
                             <option value="3">Regeneration</option>
@@ -36,6 +39,7 @@
                             <option value="7">Telepathy</option>
                             <option value="8">Elemental control</option>
                         </select>
+                        <br>
                         <button class="btn btn-outline-secondary" type="submit">Сохранить</button>
                     </form>
                 </div>
