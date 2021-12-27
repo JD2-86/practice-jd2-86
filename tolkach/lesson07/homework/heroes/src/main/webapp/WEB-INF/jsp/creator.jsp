@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <% Integer i = (Integer) request.getAttribute("Count"); %>
 <!DOCTYPE html>
 <html>
@@ -28,6 +28,10 @@
                         <label class="form-check-label" for="female">Женщина</label>
                         <input class="form-check-input" type="radio" name="male" id="female" value="female">
                         <br>
+                        <c:if test="${abil1 == ap}">
+                            <p>Visible</p>
+                        </c:if>
+                        
                         <select class="form-select" aria-label="Default select example" name="abil">
                             <option selected></option>
                             <option value="1">Invisibility</option>
