@@ -10,6 +10,7 @@
 <p><a href="view/command/create-user">Task 2: Fake User Create</a></p>
 <p><a href="createUserPost.jsp">Task 3: Real User Create (saving to database)</a></p>
 <p><a href="view/users?page=1&pageSize=30">Task 4: Users Table</a></p>
+<p><a href="updateUser.jsp">Task 5: Update User</a></p>
 
 </body>
 </html>
