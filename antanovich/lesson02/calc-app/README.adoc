@@ -1,0 +1,5 @@
+= Homework 02
+
+== Calculator maven-archetype-quickstart
+
+http://ec2-3-19-53-76.us-east-2.compute.amazonaws.com:8080/calc-app/
