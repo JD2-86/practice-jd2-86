@@ -1,4 +1,4 @@
-package by.tolkach.heroes;
+package by.tolkach.heroes.dto;
 
 import jakarta.servlet.http.HttpServletRequest;
 

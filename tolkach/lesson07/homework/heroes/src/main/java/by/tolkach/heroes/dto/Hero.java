@@ -1,4 +1,4 @@
-package by.tolkach.heroes;
+package by.tolkach.heroes.dto;
 
 public class Hero {
     private String login;

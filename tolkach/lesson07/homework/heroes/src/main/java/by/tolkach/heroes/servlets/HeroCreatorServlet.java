@@ -1,5 +1,7 @@
-package by.tolkach.heroes;
+package by.tolkach.heroes.servlets;
 
+import by.tolkach.heroes.dto.Hero;
+import by.tolkach.heroes.dto.ListOfHeroes;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -10,7 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/create-hero")
-public class HeroCreator extends HttpServlet {
+public class HeroCreatorServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
