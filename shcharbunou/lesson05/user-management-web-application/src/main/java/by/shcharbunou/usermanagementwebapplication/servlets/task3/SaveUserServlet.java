@@ -20,6 +20,6 @@ public class SaveUserServlet extends HttpServlet {
         UserRepository db = UserRepository.getInstance();
         User newUser = new User(db.getCounter().incrementAndGet(), firstName, lastName, email, userName, password);
         db.putUserIntoDB(db.getCounter().get(), newUser);
-        resp.sendRedirect("../../user-management-web-application/view/users/?id=" + db.getCounter().toString());
+        resp.sendRedirect(req.getContextPath() + "/view/users/?id=" + db.getCounter().toString());
     }
 }
