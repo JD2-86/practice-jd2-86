@@ -3,7 +3,9 @@ package by.tolkach.heroes;
 import jakarta.servlet.http.HttpServletRequest;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ListOfHeroes {
@@ -43,11 +45,28 @@ public class ListOfHeroes {
 
         try (BufferedWriter writer = new BufferedWriter(
                 new FileWriter(file.getListOfHeroes(request),true))) {
-            writer.newLine();
             writer.write(hero.getLogin() + ";" + hero.getName() + ";" + hero.getAge() + ";" + hero.getMale() + ";"
             + hero.getAbility());
+            writer.newLine();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public List<String> listOfAbilities(HttpServletRequest req) {
+        File file = new File();
+        List<String> listOfAbilities = new ArrayList<>();
+
+        try (BufferedReader reader = new BufferedReader(
+                new FileReader(file.getAbilities(req)))) {
+            String result = reader.readLine();
+            while (result != null) {
+                listOfAbilities.add(result);
+                result = reader.readLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return listOfAbilities;
     }
 }

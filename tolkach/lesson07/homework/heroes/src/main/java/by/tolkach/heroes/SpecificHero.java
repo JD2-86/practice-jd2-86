@@ -21,13 +21,17 @@ public class SpecificHero extends HttpServlet {
         Map<Integer, Hero> map = listOfHeroes.readHeroes(req);
 
         String id = req.getPathInfo().replaceFirst("/","");
-        Hero hero = map.get(Integer.parseInt(id));
 
-        req.setAttribute("log", hero.getLogin());
-        req.setAttribute("name", hero.getName());
-        req.setAttribute("male", hero.getMale());
-        req.setAttribute("age", hero.getAge());
-        req.setAttribute("abil", hero.getAbility());
+        for (Map.Entry<Integer, Hero> entry : map.entrySet()) {
+            if (entry.getValue().getLogin().equals(id)) {
+                req.setAttribute("log", entry.getValue().getLogin());
+                req.setAttribute("name", entry.getValue().getName());
+                req.setAttribute("male", entry.getValue().getMale());
+                req.setAttribute("age", entry.getValue().getAge());
+                req.setAttribute("abil", entry.getValue().getAbility());
+                break;
+            }
+        }
 
         String path = "/WEB-INF/jsp/specific-hero.jsp";
         ServletContext servletContext = req.getServletContext();

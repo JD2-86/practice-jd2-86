@@ -7,10 +7,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.Map;
 
 @WebServlet("/abilities")
 public class Abilities extends HttpServlet {
@@ -19,22 +16,9 @@ public class Abilities extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
 
-        File file = new File();
-        Integer id = 0;
+        ListOfHeroes listOfHeroes = new ListOfHeroes();
 
-        try (BufferedReader reader = new BufferedReader(
-                new FileReader(file.getAbilities(req)))) {
-            String result = reader.readLine();
-            while (result != null) {
-                req.setAttribute("abil" + id, result);
-                result = reader.readLine();
-                id++;
-            }
-            req.setAttribute("Count", id);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        req.setAttribute("abilities",listOfHeroes.listOfAbilities(req));
 
         String path = "/WEB-INF/jsp/abilities.jsp";
         ServletContext servletContext = req.getServletContext();

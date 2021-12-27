@@ -8,6 +8,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 @WebServlet("/list")
@@ -17,13 +19,14 @@ public class Heroes extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
 
-        ListOfHeroes listOfHeroes = new ListOfHeroes();
-        Map<Integer, Hero> map = listOfHeroes.readHeroes(req);
+        Map<Integer, Hero> map = new ListOfHeroes().readHeroes(req);
+        List<String> listOfLogin = new ArrayList();
 
-        for (Integer i = 0; i < map.size(); i++) {
-            req.setAttribute("log" + i,map.get(i).getLogin());
+        for (Map.Entry<Integer, Hero> entry : map.entrySet()) {
+            listOfLogin.add(entry.getValue().getLogin());
         }
-        req.setAttribute("CountOfHeroes", map.size());
+
+        req.setAttribute("heroes",listOfLogin);
 
         String path = "/WEB-INF/jsp/heroes.jsp";
         ServletContext servletContext = req.getServletContext();

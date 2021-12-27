@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<% Integer i = (Integer) request.getAttribute("CountOfHeroes"); %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,11 +13,10 @@
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-auto">
-                    <br>
-                    <%for (int j = 0; j < i; j++) {
-                        response.getWriter().println("<a href=\"/heroes/specific-hero\\" + j + "\">" + request.getAttribute("log" + j) + "</a><br>");
-
-                    }%>
+                    <c:forEach var="hero" items="${heroes}">
+                        <br>
+                        <a href="/heroes/specific-hero/${hero}">${hero}</a>
+                    </c:forEach>
                 </div>
             </div>
         </div>

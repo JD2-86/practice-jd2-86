@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <% Integer i = (Integer) request.getAttribute("Count"); %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE>
 <html>
 <head>
@@ -14,10 +15,9 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-auto">
                     <br>
-                    <%for (int j = 0; j < i; j++) {
-                                response.getWriter().println("<p>" + request.getAttribute("abil" + j) + "</p>");
-
-                    }%>
+                    <c:forEach var="ability" items="${abilities}">
+                        <p>${ability}</p>
+                    </c:forEach>
                 </div>
             </div>
         </div>
