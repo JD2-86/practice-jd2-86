@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<form action="api/users/" method="get">
+<form method="post">
     <label>Updated First Name:
         <input type="text" name="firstname"><br />
     </label>

@@ -13,12 +13,18 @@ import java.io.PrintWriter;
 public class UpdateUserByIDServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/updateUserByID.jsp");
+        requestDispatcher.forward(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPut(req, resp);
     }
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        long id = (long) req.getAttribute("id");
+        long id = Long.parseLong(req.getParameter("id"));
         String updatedFirstName = req.getParameter("firstname");
         String updatedLastName = req.getParameter("lastname");
         String updatedEmail = req.getParameter("email");
