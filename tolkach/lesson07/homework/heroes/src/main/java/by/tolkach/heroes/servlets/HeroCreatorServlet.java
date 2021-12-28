@@ -17,14 +17,7 @@ public class HeroCreatorServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
-
-        ListOfHeroes listOfHeroes = new ListOfHeroes();
-
-        req.setAttribute("abilities",listOfHeroes.listOfAbilities(req));
-
-        String path = "/WEB-INF/jsp/creator.jsp";
-        ServletContext servletContext = req.getServletContext();
-        servletContext.getRequestDispatcher(path).include(req,resp);
+        showPage(req,resp);
     }
 
     @Override
@@ -40,8 +33,16 @@ public class HeroCreatorServlet extends HttpServlet {
 
         listOfHeroes.writeHero(hero,req);
 
+        showPage(req,resp);
+    }
+
+    private void showPage(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/html");
+
+        ListOfHeroes listOfHeroes = new ListOfHeroes();
+        req.setAttribute("abilities",listOfHeroes.listOfAbilities(req));
         String path = "/WEB-INF/jsp/creator.jsp";
         ServletContext servletContext = req.getServletContext();
-        servletContext.getRequestDispatcher(path).forward(req,resp);
+        servletContext.getRequestDispatcher(path).include(req,resp);
     }
 }
