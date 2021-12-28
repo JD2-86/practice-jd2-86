@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -17,8 +18,14 @@ import java.util.stream.Collectors;
 public class UsersTableServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        long page = Long.parseLong(request.getParameter("page"));
-        long pageSize = Long.parseLong(request.getParameter("pageSize"));
+        long page, pageSize;
+        if (Objects.isNull(request.getParameter("page")) || Objects.isNull(request.getParameter("pageSize"))) {
+            page = 1;
+            pageSize = 30;
+        } else {
+            page = Long.parseLong(request.getParameter("page"));
+            pageSize = Long.parseLong(request.getParameter("pageSize"));
+        }
         UserRepository db = UserRepository.getInstance();
         Map<Long, User> temporaryDB = db.getDatabase();
         Set<Long> setID = temporaryDB.keySet();

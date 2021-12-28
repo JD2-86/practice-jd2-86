@@ -8,12 +8,18 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Objects;
 
 @WebServlet(name = "UpdateUserByIDServlet", value = "/api/users/")
 public class UpdateUserByIDServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/updateUserByID.jsp");
+        RequestDispatcher requestDispatcher;
+        if (Objects.nonNull(req.getParameter("id"))) {
+            requestDispatcher = req.getRequestDispatcher("/updateUserByID.jsp");
+        } else {
+            requestDispatcher = req.getRequestDispatcher("/updateUserFullForm.jsp");
+        }
         requestDispatcher.forward(req, resp);
     }
 

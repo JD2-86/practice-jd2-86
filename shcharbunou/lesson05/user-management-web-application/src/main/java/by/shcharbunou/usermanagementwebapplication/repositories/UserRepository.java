@@ -59,6 +59,10 @@ public class UserRepository {
         database.put(counter.incrementAndGet(), user);
     }
 
+    public void deleteUserFromDB(Long id) {
+        database.remove(id, database.get(id));
+    }
+
     public void putUserIntoDB(Long id, User user) {
         database.put(id, user);
     }
