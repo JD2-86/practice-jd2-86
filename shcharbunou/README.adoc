@@ -3,3 +3,7 @@
 == Lesson 4
 
 Link to AWS: http://ec2-54-145-133-219.compute-1.amazonaws.com:8080/maven-webapp-shcharbunouCV/
+
+== Lesson 5
+
+Link to AWS: http://ec2-54-145-133-219.compute-1.amazonaws.com:8080/user-management-web-application/ [user-management-web-application]
