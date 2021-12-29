@@ -4,7 +4,7 @@
     <title>Form of creation of new user</title>
 </head>
 <body>
-<form method="post" action="/lesson5/api/users">
+<form method="post" action="api/users">
     <fieldset>
         <legend>Form to fill in fields</legend>
         <label for="firstName">FirstName:</label>
