@@ -4,4 +4,4 @@
 Link to AWS: http://ec2-54-209-2-165.compute-1.amazonaws.com:8080/firstcv/
 
 == lesson07
-Link to AWS: http://ec2-54-209-2-165.compute-1.amazonaws.com:8080/heroes/
+Link to AWS: http://ec2-54-209-2-165.compute-1.amazonaws.com:8080/heroes[Heroes]

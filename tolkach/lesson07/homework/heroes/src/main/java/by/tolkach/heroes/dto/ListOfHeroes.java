@@ -1,17 +1,15 @@
 package by.tolkach.heroes.dto;
 
-import by.tolkach.heroes.dto.File;
-import by.tolkach.heroes.dto.Hero;
 import jakarta.servlet.http.HttpServletRequest;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ListOfHeroes {
-    private Integer id = 0;
+    private AtomicInteger id;
 
     public Map<Integer, Hero> readHeroes(HttpServletRequest req) {
         by.tolkach.heroes.dto.File file = new by.tolkach.heroes.dto.File();

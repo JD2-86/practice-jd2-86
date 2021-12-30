@@ -1,5 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>--%>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ include file="common/jstl-connect.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -16,7 +15,7 @@
                 <div class="col-md-auto">
                     <c:forEach var="hero" items="${heroes}">
                         <br>
-                        <a href="/heroes/specific-hero/${hero}">${hero}</a>
+                        <a href="${pageContext.request.contextPath}/specific-hero/${hero}">${hero}</a>
                     </c:forEach>
                 </div>
             </div>
