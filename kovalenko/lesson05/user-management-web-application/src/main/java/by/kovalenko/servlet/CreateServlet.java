@@ -1,6 +1,5 @@
 package by.kovalenko.servlet;
 
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -15,11 +14,12 @@ public class CreateServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html");
         PrintWriter writer = response.getWriter();
         writer.write("<html><head>");
         writer.write("<title>Form of creation of new user</title>");
         writer.write("</head><body>");
-        writer.write("<form method=\"post\" action=\"api/users\">");
+        writer.write("<form method=\"post\" action=\"" + request.getContextPath() + "/api/users\">");
         writer.write("<fieldset>");
         writer.write("<legend>Form to fill in fields</legend>");
         writer.write("<label for=\"firstName\">FirstName:</label>");

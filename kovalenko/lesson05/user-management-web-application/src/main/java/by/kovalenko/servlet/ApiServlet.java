@@ -24,9 +24,9 @@ public class ApiServlet extends HttpServlet {
         String email = request.getParameter("email");
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
-        PrintWriter writer = response.getWriter();
         try {
             User newUser = new User(firstName, lastName, email, userName, password);
+            PrintWriter writer = response.getWriter();
             response.setContentType("text/html");
             writer.write("<html><body>");
             writer.write("<h1> User info </h1>");
