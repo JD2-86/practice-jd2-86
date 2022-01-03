@@ -2,6 +2,7 @@ package repo.impl;
 
 import model.Hero;
 import repo.HeroRepo;
+import repo.IdProvider;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,20 +10,19 @@ import java.util.concurrent.atomic.AtomicLong;
 
 public class HeroRepoImpl implements HeroRepo {
     private final List<Hero> heroes = new ArrayList<>();
-    private final AtomicLong idProvider = new AtomicLong();
+    private final IdProvider idProvider = IdProviderImpl.getInstance();
     private static final HeroRepo INSTANCE = new HeroRepoImpl();
 
     @Override
-    public Hero addAll(Hero hero) {
-        Long id = idProvider.incrementAndGet();
-        hero.setId(id);
+    public Hero add(Hero hero) {
+        hero.setId(idProvider.addId());
         heroes.add(hero);
         return hero;
     }
 
     @Override
-    public List<Hero> addAll(List<Hero> heroes) {
-        heroes.forEach(hero -> hero.setId(idProvider.incrementAndGet()));
+    public List<Hero> add(List<Hero> heroes) {
+        heroes.forEach(hero -> hero.setId(idProvider.addId()));
         this.heroes.addAll(heroes);
         return heroes;
     }

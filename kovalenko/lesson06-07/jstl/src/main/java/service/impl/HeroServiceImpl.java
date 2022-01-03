@@ -19,18 +19,18 @@ public class HeroServiceImpl implements HeroService {
 
     @Override
     public Hero add(Hero hero) {
-        return heroRepo.addAll(hero);
+        return heroRepo.add(hero);
     }
 
     @Override
     public List<Hero> add(List<Hero> heroes) {
-        return heroRepo.addAll(heroes);
+        return heroRepo.add(heroes);
     }
 
     @Override
     public Hero getById(Long id) {
         return heroRepo.getHeroes().stream()
-                .filter(hero -> hero.equals(id))
+                .filter(hero -> hero.getId().equals(id))
                 .findFirst()
                 .orElseThrow(HeroNotFoundException::new);
     }
