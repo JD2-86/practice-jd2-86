@@ -6,7 +6,6 @@ import repo.IdProvider;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
 
 public class AbilityRepoImpl implements AbilityRepo {
     private final List<Ability> abilities = new ArrayList<>();

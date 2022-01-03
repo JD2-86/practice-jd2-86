@@ -46,7 +46,7 @@ public class HeroInitializerImpl implements HeroInitializer {
     private HeroInitializerImpl() {
     }
 
-    public static final HeroInitializer getInstance() {
+    public static HeroInitializer getInstance() {
         return INSTANCE;
     }
 }

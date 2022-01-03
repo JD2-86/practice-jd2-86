@@ -6,7 +6,7 @@
     <%@ include file="WEB-INF/jsp/common/css-connect.jsp" %>
 </head>
     <body>
-        <%@ include file="WEB-INF/jsp/common/header.jsp" %>
+    <%@ include file="WEB-INF/jsp/common/header.jsp" %>
         <h1>Superheroes service</h1>
     </body>
 </html>

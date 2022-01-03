@@ -35,9 +35,10 @@ public class HeroServiceImpl implements HeroService {
                 .orElseThrow(HeroNotFoundException::new);
     }
 
-    private HeroServiceImpl(){}
+    private HeroServiceImpl() {
+    }
 
-    public static HeroService getInstance(){
+    public static HeroService getInstance() {
         return INSTANCE;
     }
 }
