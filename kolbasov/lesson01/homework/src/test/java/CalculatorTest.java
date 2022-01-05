@@ -5,7 +5,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertThrows;
 
-class CalculatorTest  {
+class CalculatorTest {
     Calculator calculator = new Calculator();
 
 
