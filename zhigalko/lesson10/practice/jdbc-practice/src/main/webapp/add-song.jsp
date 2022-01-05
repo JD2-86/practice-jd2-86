@@ -8,7 +8,7 @@
 <form action="add-song" method="post">
     <fieldset>
         <legend>New Song Registration</legend>
-        <label for="artist">New Song</label>
+        <label for="artist">Artist</label>
         <input name="artist" id="artist" type="text" required oninvalid="this.setCustomValidity('Enter artist')" oninput="setCustomValidity('')">
         <br>
         <label for="title">New Song</label>
@@ -20,8 +20,8 @@
         <label for="recorded">Year of record</label>
         <input name="recorded" id="recorded" type="number" required oninvalid="this.setCustomValidity('Enter recorded year')" oninput="setCustomValidity('')">
         <br>
-        <label for="length">Year of record</label>
-        <input name="length" id="length" type="time" required oninvalid="this.setCustomValidity('Enter song length')" oninput="setCustomValidity('')">
+        <label for="length">Length</label>
+        <input name="length" id="length" type="text" required oninvalid="this.setCustomValidity('Enter song length')" oninput="setCustomValidity('')">
         <br>
     </fieldset>
     <br>

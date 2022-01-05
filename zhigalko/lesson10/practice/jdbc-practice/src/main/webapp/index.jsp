@@ -10,5 +10,6 @@
 <br/>
 <p><a href="add-artist.jsp">add artist to database</a></p>
 <p><a href="add-song.jsp">add song to database</a></p>
+<p><a href="delete-song.jsp">delete song from database</a></p>
 </body>
 </html>
