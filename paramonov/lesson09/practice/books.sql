@@ -38,10 +38,10 @@ VALUES (1, 1),
        (1, 4),
        (4, 5),
        (5, 6),
-       (4,7),
-       (6,8),
-       (5,9),
-       (7,10);
+       (4, 7),
+       (6, 8),
+       (5, 9),
+       (7, 10);
 
 INSERT INTO author (full_name, birthday, nationality)
 VALUES ('F.Dostoevsky', '1770-4-30', 'russian'),
