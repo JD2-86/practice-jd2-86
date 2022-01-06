@@ -1,4 +1,4 @@
-package by.shcharbunou.superheroeswebapplication;
+package by.shcharbunou.superheroes;
 
 import java.io.*;
 
