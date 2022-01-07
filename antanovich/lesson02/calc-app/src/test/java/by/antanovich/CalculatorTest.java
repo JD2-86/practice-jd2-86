@@ -39,10 +39,9 @@ public class CalculatorTest {
 
     @Test
     public void divideExceptionTest() {
-        Assertions.assertThrows(ArithmeticException.class, new Executable() {
-
-            @Override
-            public void () =>calculator.divide(5,0);
-        }
+        Throwable exception = assertThrows(
+                ArithmeticException.class,
+                () -> calculator.divide(5,0));
+        assertEquals("Zero cannot divide any number", exception.getMessage());
     }
 }
