@@ -1,0 +1,11 @@
+header {
+    background-color: indigo;
+    color: azure;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+
+body {
+    margin-top: 3%;
+}

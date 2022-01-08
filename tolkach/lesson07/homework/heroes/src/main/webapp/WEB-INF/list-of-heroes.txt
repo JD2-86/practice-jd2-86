@@ -1,0 +1,3 @@
+Wonder-women;Diana;20;Women;Truth;
+Superman;Clark;30;Men;Flying;
+Hulk;Bruce;35;Men;Power;
