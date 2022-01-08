@@ -1,13 +1,12 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ include file="WEB-INF/jsp/common/jstl-connect.jsp" %>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Superheroes service</title>
+    <%@ include file="WEB-INF/jsp/common/css-connect.jsp" %>
 </head>
 <body>
-<h1><%= "Hello World!" %>
-</h1>
-<br/>
-<a href="hello-servlet">Hello Servlet</a>
+<%@ include file="WEB-INF/jsp/common/header.jsp" %>
+<h1>Superheroes service</h1>
 </body>
 </html>

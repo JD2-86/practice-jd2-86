@@ -1,16 +1,16 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: danie
-  Date: 08.01.2022
-  Time: 22:40
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="common/jstl-connect.jsp" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Heroes</title>
+    <%@ include file="common/css-connect.jsp" %>
 </head>
 <body>
-
+<%@ include file="common/header.jsp" %>
+<div class="container">
+    <c:forEach items="${requestScope.heroes}" var="hero">
+        <p><a href="${pageContext.request.contextPath}/hero?id=${hero.id}">${hero.name}</a></p>
+    </c:forEach>
+</div>
 </body>
 </html>

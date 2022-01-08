@@ -1,0 +1,22 @@
+.navbar-collapse.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+.navbar-nav > li > a {
+    color: lightblue;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar-header img {
+    width: 3em;
+    background: white;
+    border-radius: 0.3em;
+    margin: 0.5em 0;
+}
+
+h1 {
+    text-align: center;
+}

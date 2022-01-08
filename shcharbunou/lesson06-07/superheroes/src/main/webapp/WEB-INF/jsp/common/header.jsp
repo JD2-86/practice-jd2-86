@@ -1,16 +1,24 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: danie
-  Date: 08.01.2022
-  Time: 22:41
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<footer>
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="${pageContext.request.contextPath}/">
+                    <img alt="Brand" src="${pageContext.request.contextPath}/src/main/webapp/static/icon.png">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse navbar-center" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="<c:url value="/abilities"/>">Abilities</a>
+                    </li>
+                    <li>
+                        <a href="<c:url value="/heroes"/>">Heroes</a>
+                    </li>
+                    <li>
+                        <a href="<c:url value="/hero/create"/>">Create Hero</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</footer>
