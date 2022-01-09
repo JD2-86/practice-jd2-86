@@ -8,8 +8,8 @@
 <body>
 <%@ include file="common/header.jsp" %>
 <div class="container">
-    <c:forEach items="${requestScope.heroes}" var="hero">
-        <p><a href="${pageContext.request.contextPath}/hero?id=${hero.id}">${hero.name}</a></p>
+    <c:forEach items="${requestScope.heroes.database}" var="hero">
+        <p><a href="${pageContext.request.contextPath}/hero?id=${hero.key}">${hero.value.nickname}</a></p>
     </c:forEach>
 </div>
 </body>

@@ -8,8 +8,8 @@
 <body>
 <%@ include file="common/header.jsp" %>
 <div class="container">
-    <p><span>Псевдоним: </span><span>${requestScope.hero.name}</span></p>
-    <p><span>Реальное имя: </span><span>${requestScope.hero.identity}</span></p>
+    <p><span>Псевдоним: </span><span>${requestScope.hero.nickname}</span></p>
+    <p><span>Реальное имя: </span><span>${requestScope.hero.realName}</span></p>
     <p>
         <span>Пол: </span>
         <span>
@@ -18,7 +18,7 @@
         </span>
     </p>
     <p><span>Возраст: </span><span>${requestScope.hero.age}</span><span> лет</span></p>
-    <p><span>Способность: </span><span>${requestScope.hero.abilityName}</span></p>
+    <p><span>Способность: </span><span>${requestScope.hero.ability.abilityDesignation}</span></p>
 </div>
 </body>
 </html>

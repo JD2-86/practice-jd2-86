@@ -8,8 +8,8 @@
 <body>
 <%@ include file="common/header.jsp" %>
 <div class="container">
-    <c:forEach items="${abilities}" var="ability">
-        <p>${ability.name}</p>
+    <c:forEach items="${requestScope.abilities.database}" var="ability">
+        <p>${ability.value.abilityDesignation}</p>
     </c:forEach>
 </div>
 </body>

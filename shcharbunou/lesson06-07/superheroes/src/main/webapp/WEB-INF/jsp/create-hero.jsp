@@ -8,7 +8,7 @@
 <body>
 <%@ include file="common/header.jsp" %>
 <div class="container">
-    <form method="post" action="${pageContext.request.contextPath}/hero">
+    <form method="post" action="${pageContext.request.contextPath}/hero/create">
         <div class="form-group">
             <label for="name" class="form-label">Псевдоним: </label>
             <input id="name" type="text" name="name" class="form-control">
@@ -30,8 +30,8 @@
         <div class="form-group">
             <label class="form-label" for="ability"></label>
             <select id="ability" class="form-control" name="ability">
-                <c:forEach items="${requestScope.abilities}" var="ability">
-                    <option value="${ability.id}">${ability.name}</option>
+                <c:forEach items="${requestScope.abilities.database}" var="ability">
+                    <option>${ability.value.abilityDesignation}</option>
                 </c:forEach>
             </select>
         </div>
