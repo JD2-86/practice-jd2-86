@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <a href="${pageContext.request.contextPath}/">
-                    <img alt="Brand" src="${pageContext.request.contextPath}/static/icon.png">
+                    <img alt="image" width="60" height="60" src="${pageContext.request.contextPath}/static/icon.png">
                 </a>
             </div>
             <div class="collapse navbar-collapse navbar-center" id="bs-example-navbar-collapse-1">
