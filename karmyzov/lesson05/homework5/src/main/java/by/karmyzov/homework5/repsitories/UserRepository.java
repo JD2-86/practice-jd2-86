@@ -12,26 +12,26 @@ public class UserRepository {
     private static volatile UserRepository instance = new UserRepository();
 
     private UserRepository() {
-        database.put(counter.incrementAndGet(), new User(counter.get(), "Vladimir", "Putin",
-                "vvputin@yandex.ru", "vovan_1952", "4321fuckbiden1234"));
-        database.put(counter.incrementAndGet(), new User(counter.get(), "Joe", "Biden",
-                "joebiden@gmail.com", "joeshuewithlove", "2021_fuckputin_2021"));
-        database.put(counter.incrementAndGet(), new User(counter.get(), "Robert", "Preston",
-                "robertpr@gmail.com", "rob_pres_2001", "securitylevel9999"));
-        database.put(counter.incrementAndGet(), new User(counter.get(), "Elizabeth", "Horn",
-                "elhorn@gmail.com", "Horny_Lizzy", "imgonnakillpeople"));
-        database.put(counter.incrementAndGet(), new User(counter.get(), "Henry", "Murphy",
-                "hhmurphy@gmail.com", "MorpheousGuy", "chooseYourPILL"));
-        database.put(counter.incrementAndGet(), new User(counter.get(), "Olivia", "Bates",
-                "olivia_bates@gmail.com", "X_mamina-olivka_X", "mypassword12345678"));
-        database.put(counter.incrementAndGet(), new User(counter.get(), "Anna", "Fisher",
-                "annochka-fish@gmail.com", "_ProfessionalFisher_", "ihackedcolonialpipeline"));
-        database.put(counter.incrementAndGet(), new User(counter.get(), "Spencer", "Greer",
-                "ggspence@gmail.com", "GreerCareer", "user0987654321resu"));
-        database.put(counter.incrementAndGet(), new User(counter.get(), "Adele", "Parks",
-                "adelepark@gmail.com", "ParksLovesLSDMarks", "hydraruzxpnew4af"));
-        database.put(counter.incrementAndGet(), new User(counter.get(), "John", "Woods",
-                "johnywood@gmail.com", "Big_Black_Backwood", "killpeoplekillall"));
+        database.put(counter.incrementAndGet(), new User(counter.get(), "Jaromir", "Jagr",
+                "jar@gmail.com", "jaga", "111"));
+        database.put(counter.incrementAndGet(), new User(counter.get(), "Alex", "Oveckin",
+                "alexo@gmail.com", "great", "222"));
+        database.put(counter.incrementAndGet(), new User(counter.get(), "Evgeni", "Kuznetsov",
+                "kuzi@gmail.com", "kuzi", "33333"));
+        database.put(counter.incrementAndGet(), new User(counter.get(), "Vladimir", "Tarasenko",
+                "taras@gmail.com", "taras", "344444"));
+        database.put(counter.incrementAndGet(), new User(counter.get(), "Artemi", "Panarin",
+                "panara@gmail.com", "panara", "55555"));
+        database.put(counter.incrementAndGet(), new User(counter.get(), "Pavel", "Datsuk",
+                "dats@gmail.com", "dats", "66666"));
+        database.put(counter.incrementAndGet(), new User(counter.get(), "Sergei", "Fedorov",
+                "fedor@gmail.com", "fedor", "7777"));
+        database.put(counter.incrementAndGet(), new User(counter.get(), "Igor", "Larionov",
+                "igorek@gmail.com", "igirek", "88888"));
+        database.put(counter.incrementAndGet(), new User(counter.get(), "Evgeni", "Malkin",
+                "malpa@gmail.com", "malpa", "9999"));
+        database.put(counter.incrementAndGet(), new User(counter.get(), "Alex", "Radulov",
+                "rada@gmail.com", "rada", "101010101"));
     }
 
     public static UserRepository getInstance() {
