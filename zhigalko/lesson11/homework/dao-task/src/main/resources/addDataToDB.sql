@@ -24,7 +24,8 @@ VALUES ('Thunderstruck','The Razors Edge',1990,'04:52'),
        ('Sympathy for the Devil','Beggars Banquet',1968,'06:28'),
        ('Bohemian Rhapsody','A Night at the Opera',1975,'05:58'),
        ('Something in the Way','Nevermind',1991,'03:52'),
-       ('No woman, no cry','Natty Dread', 1974, '03:42');
+       ('No woman, no cry','Natty Dread', 1974, '03:42'),
+       ('Amerika','Reise, Reise',2004, '03:46');
 
 INSERT INTO dao.artist_song_link (artist_id, song_id)
 VALUES (1, 2),
@@ -39,4 +40,7 @@ VALUES (1, 2),
        (8, 10),
        (9, 11),
        (10, 12),
-       (11,14);
+       (11, 13),
+       (1, 14);
+
+
