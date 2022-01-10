@@ -1,0 +1,365 @@
+body {
+    background-color: #F6DDCC ;
+    font-family: 'Raleway'; 
+}
+.all-structure {
+    position: relative;
+    width: 595px;
+    height: 842px;
+    background-color: white;
+    margin: auto;
+    margin-top: 8px;
+}
+
+/* Начало cтилей для блока header */
+.header-photo {
+    position: absolute;
+    width: 120px;
+    left: 443px;
+    top: 57px;
+    border-radius: 60px;
+}
+.header-title {
+    position: absolute;
+    width: 258px;
+    height: 87px;
+    left: 29px;
+    top: 69px;
+    
+}
+.header-title-name {
+    position: absolute;
+    width: 57px;
+    height: 28px;
+    left: 1px;
+    top: 0px;
+
+    font-weight: 300;
+    font-size: 24px;
+    letter-spacing: 0.05em;
+
+    color: #000000;
+}
+.header-title-name::before {
+    content: '';
+    background: black;
+    display: inline-block;
+    height: 1px;
+    position: absolute;
+    top: -38px;
+    left: -27px;
+
+    vertical-align: text-top;
+    width: 110%;
+    transform: rotate(90deg);
+} 
+.header-title-surname {
+    position: absolute;
+    width: 258px;
+    height: 47px;
+    left: 0px;
+    top: 24px;
+
+   
+    font-weight: 600;
+    font-size: 40px;
+    text-transform: uppercase;
+
+    letter-spacing: 0.2em;
+
+    color: #000000;
+}
+.header-title-surname::after {
+    content: '';
+    background: black;
+    display: inline-block;
+    height: 1px;
+    position: absolute;
+    top: 93px;
+    left: -38.5px;
+    width: 34%;
+    transform: rotate(90deg);
+}
+.header-title-job {
+    position: absolute;
+    width: 123px;
+    height: 16px;
+    left: 198px;
+    top: 71px;
+
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+
+    color: #000000;
+
+    margin: 0;
+}
+/* Начало cтилей для блока contact */
+.contact-section {
+    position: absolute;
+    width: 125px;
+    height: 124px;
+    left: 23px;
+    top: 243px;
+    
+}
+.contact-section-header {
+    position: absolute;
+    width: 83px;
+    height: 16px;
+    left: 9px;
+    top: 0px;
+    margin-top: 0;
+
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    color: #000000;
+}
+.contact-section-location-image {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 0px;
+    top: 44px;
+}
+.contact-section-location-description {
+    position: absolute;
+    width: 85px;
+    height: 12px;
+    left: 30px;
+    top: 47px;
+
+    font-weight: 300;
+    font-size: 10px;
+
+    letter-spacing: 0.05em;
+
+    color: #676767;
+    margin: 0;
+}
+.contact-section-number-image {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 0px;
+    top: 70px;
+}
+.contact-section-number-description {
+    position: absolute;
+    width: 95px;
+    height: 12px;
+    left: 30px;
+    top: 73px;
+   margin-top: 0;
+    font-weight: 300;
+    font-size: 10px;
+    
+    letter-spacing: 0.05em;
+    
+    color: #676767;
+}
+.contact-section-mail-image {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 0px;
+    top: 96px;
+}
+.contact-section-mail-description {
+    position: absolute;
+    width: 55px;
+    height: 12px;
+    left: 30px;
+    top: 99px;
+    margin-top: 0;
+
+    font-weight: 300;
+    font-size: 10px;
+ 
+    letter-spacing: 0.05em;
+
+    color: #676767;
+
+}
+/* Начало cтилей для блока profile */
+.profile-section {
+    position: absolute;
+    width: 350px;
+    height: 111px;
+    left: 213px;
+    top: 243px;
+
+}
+.profile-section-header {
+    position: absolute;
+    width: 74px;
+    height: 16px;
+    left: 0px;
+    top: 0px;
+    margin: 0;
+
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    color: #000000;
+}
+.profile-section-description {
+    position: absolute;
+    width: 350px;
+    height: 64px;
+    left: 0px;
+    top: 47px;
+    margin: 0;
+
+    font-weight: 300;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+
+    color: #676767;
+}
+/* Начало cтилей для блока skills */
+.skills-section {
+    position: absolute;
+    width: 96px;
+    height: 130px;
+    left: 25px;
+    top: 405px;
+}
+.skills-section-header {
+    position: absolute;
+    width: 61px;
+    height: 16px;
+    left: 7px;
+    top: 0px;
+    margin: 0;
+
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    color: #000000;
+}
+.skills-section-list {
+    position: absolute;
+    width: 95px;
+    height: 122px;
+    left: 17px;
+    top: 24px;
+    padding: 0;
+  
+}
+ul  li {
+    font-weight: 300;
+    font-size: 10px;
+    margin: 8px 0px;
+
+    letter-spacing: 0.05em;
+    color: #676767;
+}
+/* Начало cтилей для блока experience */
+.experience-section {
+    position: absolute;
+    width: 354px;
+    height: 92px;
+    left: 209px;
+    top: 405px;
+}
+.experience-section-header {
+    position: absolute;
+    width: 111px;
+    height: 16px;
+    left: 4px;
+    top: 0px;
+    margin-top: 0;
+
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    color: #000000;
+}
+.experience-section-description {
+    position: absolute;
+    width: 350px;
+    height: 64px;
+    left: 0px;
+    top: 47px;
+    margin-top: 0;
+
+    font-weight: 300;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+
+    color: #676767;
+}
+/* Начало cтилей для блока language */
+.language-section {
+    position: absolute;
+    width: 125px;
+    height: 112px;
+    left: 28.5px;
+    top: 573px;
+
+}
+.language-section-header {
+    position: absolute;
+    width: 104px;
+    height: 16px;
+    left: 3.5px;
+    top: 0px;
+    margin: 0;
+
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    color: #000000;
+}
+.language-section-list {
+    position: absolute;
+    width: 95px;
+    height: 122px;
+    left: 17px;
+    top: 24px;
+    padding: 0;
+}
+/* Начало cтилей для блока education */
+.education-section {
+    position: absolute;
+    width: 354px;
+    height: 92px;
+    left: 209px;
+    top: 573px;
+}
+.education-section-header {
+    position: absolute;
+    width: 111px;
+    height: 16px;
+    left: 4px;
+    top: 0px;
+    margin-top: 0;
+
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    color: #000000;   
+}
+.education-section-list {
+    position: absolute;
+    width: 354px;;
+    height: 122px;
+    left: 17px;
+    top: 24px;
+    padding: 0;
+}
