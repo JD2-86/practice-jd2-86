@@ -9,7 +9,6 @@ public class Main {
         Calculator calculator = new Calculator();
         Scanner in = new Scanner(System.in);
 
-
         while (true) {
             System.out.println("1-add" + "\n" + "2-subtract" + "\n" + "3-multiply" + "\n" + "4-divide");
             a = in.nextInt();
@@ -35,18 +34,13 @@ public class Main {
                     }
                 default:
                     System.out.println("Input correct math action!!!");
-
             }
             System.out.println("Continue y/n ?");
             in.nextLine();
             String str = in.nextLine();
             if (str.equals("n")) break;
-
         }
-
     }
-
-
 }
 
 
