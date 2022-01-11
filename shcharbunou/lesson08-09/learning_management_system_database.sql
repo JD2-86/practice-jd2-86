@@ -18,4 +18,15 @@ VALUES ('A1'),
        ('C1'),
        ('C2');
 
+CREATE TABLE user_schema.age_group
+(
+    group_id SERIAL PRIMARY KEY,
+    group_designation VARCHAR(32) NOT NULL
+);
+
+INSERT INTO user_schema.age_group (group_designation)
+VALUES ('Kids'),
+       ('Teenagers'),
+       ('Adults');
+
 
