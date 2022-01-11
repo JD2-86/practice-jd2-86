@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence/orm
+        https://jakarta.ee/xml/ns/persistence/orm_3_0.xsd" version="3.0">
+    <description>XML Mapping file</description>
+    <mapped-superclass class="by.zhigalko.jpa.dal.entity.BaseEntity" access="PROPERTY">
+        <attributes>
+            <id name="id">
+                <generated-value strategy="AUTO"/>
+            </id>
+        </attributes>
+    </mapped-superclass>
+
+    <entity class="by.zhigalko.jpa.dal.entity.MessageEntity">
+        <table name="message"/>
+        <attributes>
+            <basic name="text">
+                <column name="text" length="256"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>
