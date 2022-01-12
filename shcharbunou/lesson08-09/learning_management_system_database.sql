@@ -69,6 +69,22 @@ VALUES ('TOEFL/IELTS exams'),
        ('Individual sessions'),
        ('Just courses');
 
+CREATE TABLE test_project_schema.book
+(
+    book_id SERIAL PRIMARY KEY,
+    course_id INTEGER REFERENCES test_project_schema.course(course_id),
+    book_designation VARCHAR(64) NOT NULL,
+    author VARCHAR(64) NOT NULL
+);
+
+INSERT INTO test_project_schema.book (course_id, book_designation, author)
+VALUES (5, 'ENGLISH FILE Student Book', 'Christina Latham-Koenig'),
+       (5, 'ENGLISH FILE Workbook', 'Christina Latham-Koenig'),
+       (10, 'ENGLISH FILE Student Book', 'Christina Latham-Koenig'),
+       (10, 'ENGLISH FILE Workbook', 'Christina Latham-Koenig'),
+       (13, 'Roadmap B2 Student Book', 'PEARSON EDUCATION'),
+       (13, 'Roadmap B2 Workbook', 'PEARSON EDUCATION');
+
 
 
 
