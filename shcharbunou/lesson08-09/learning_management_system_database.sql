@@ -120,8 +120,8 @@ VALUES ('Name1', 'Lastname1', 'username1', '1234pass6789', 'email1@gmail.com', '
        ('Name3', 'Lastname6', 'username6', '1234pass6777889989', 'email6@gmail.com', '+375295885478', 2, 8, 5),
        ('Name1', 'Lastname7', 'username7', '1234plllss6789', 'email7@gmail.com', '+3752958748955', 3, null, null),
        ('Name8', 'Lastname8', 'username8', '12passpass6789', 'email8@gmail.com', '+3752952742962', 2, 4, 5),
-       ('Name9', 'Lastname9', 'username9', '1234passssap6789', 'email9@gmail.com', '+3752922222233', 2, 4, 5),
-       ('Name10', 'Lastname10', 'username10', '1234pa000ss6789', 'email10@gmail.com', '+375293333322', 2, 4, 5);
+       ('Name9', 'Lastname9', 'username9', '1234passssap6789', 'email9@gmail.com', '+3752922222233', 2, 4, 2),
+       ('Name10', 'Lastname10', 'username10', '1234pa000ss6789', 'email10@gmail.com', '+375293333322', 2, 4, 1);
 
 SELECT c.course_designation, ag.group_designation, lpl.level_designation
 FROM test_project_schema.course AS c
@@ -147,8 +147,19 @@ FROM test_project_schema.user AS u
 WHERE p.purpose_id = 5
 ORDER BY u.user_id;
 
+UPDATE test_project_schema.user
+SET purpose_id = 5
+WHERE course_id > 1 AND course_id < 6;
 
+DELETE
+FROM test_project_schema.user
+WHERE role_id = 3
+OR (course_id IS NULL AND role_id != 1)
+OR (purpose_id IS NULL AND role_id != 1);
 
-
-
-
+SELECT u.username, r.role_designation, c.course_designation, p.purpose_designation
+FROM test_project_schema.user AS u
+         LEFT JOIN test_project_schema.role AS r ON u.role_id = r.role_id
+         LEFT JOIN test_project_schema.course AS c ON u.course_id = c.course_id
+         LEFT JOIN test_project_schema.purpose AS p ON u.purpose_id = p.purpose_id
+ORDER BY u.user_id;
