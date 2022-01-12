@@ -1,32 +1,75 @@
-CREATE DATABASE learning_management_system_database;
+-- CREATE DATABASE learning_management_system_database;
 
-DROP SCHEMA IF EXISTS user_schema;
+DROP SCHEMA IF EXISTS test_project_schema CASCADE;
 
-CREATE SCHEMA user_schema;
+CREATE SCHEMA test_project_schema;
 
-CREATE TABLE user_schema.language_proficiency_level
+CREATE TABLE test_project_schema.language_proficiency_level
 (
     level_id SERIAL PRIMARY KEY,
     level_designation VARCHAR(32) NOT NULL
 );
 
-INSERT INTO user_schema.language_proficiency_level (level_designation)
-VALUES ('A1'),
+INSERT INTO test_project_schema.language_proficiency_level (level_designation)
+VALUES ('ZERO'),
+       ('A1'),
        ('A2'),
        ('B1'),
        ('B2'),
        ('C1'),
        ('C2');
 
-CREATE TABLE user_schema.age_group
+CREATE TABLE test_project_schema.age_group
 (
     group_id SERIAL PRIMARY KEY,
     group_designation VARCHAR(32) NOT NULL
 );
 
-INSERT INTO user_schema.age_group (group_designation)
+INSERT INTO test_project_schema.age_group (group_designation)
 VALUES ('Kids'),
        ('Teenagers'),
        ('Adults');
+
+CREATE TABLE test_project_schema.course
+(
+    course_id SERIAL PRIMARY KEY,
+    group_id INTEGER REFERENCES test_project_schema.age_group (group_id),
+    level_id INTEGER REFERENCES test_project_schema.language_proficiency_level (level_id),
+    semesters_number INTEGER NOT NULL,
+    course_designation VARCHAR(64) NOT NULL
+);
+
+INSERT INTO test_project_schema.course (group_id, level_id, semesters_number, course_designation)
+VALUES (1, 1, 1, 'Little Kids'),
+       (1, 1, 1, 'Kids'),
+       (1, 1, 1, 'Juniors'),
+       (2, 2, 1, 'Teens'),
+       (3, 2, 1, 'Beginner'),
+       (3, 2, 3, 'Elementary 1-3'),
+       (3, 2, 1, 'Elementary 4'),
+       (3, 3, 3, 'Pre-intermediate 1-3'),
+       (3, 3, 1, 'Pre-intermediate 4'),
+       (3, 4, 3, 'Intermediate 1-3'),
+       (3, 4, 3, 'Intermediate 4-6'),
+       (3, 5, 3, 'Upper-intermediate'),
+       (3, 6, 3, 'Pre-advanced 1-3'),
+       (3, 6, 3, 'Lower-advanced'),
+       (3, 7, 3, 'Upper-advanced ');
+
+CREATE TABLE test_project_schema.purpose
+(
+    purpose_id SERIAL PRIMARY KEY,
+    purpose_designation VARCHAR(64) NOT NULL
+);
+
+INSERT INTO test_project_schema.purpose (purpose_designation)
+VALUES ('TOEFL/IELTS exams'),
+       ('Interview preparation'),
+       ('Corporate training'),
+       ('Individual sessions'),
+       ('Just courses');
+
+
+
 
 
