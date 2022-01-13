@@ -11,4 +11,4 @@ Link to AWS link:http://ec2-54-144-232-209.compute-1.amazonaws.com:8080/practice
 
 == Lesson 06
 
-Link to AWS link:http://ec2-54-144-232-209.compute-1.amazonaws.com:8080/practice06/[practice]
+Link to AWS link:http://ec2-54-165-213-86.compute-1.amazonaws.com:8080/practice06/[practice]
