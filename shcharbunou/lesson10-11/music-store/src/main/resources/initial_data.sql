@@ -1,0 +1,45 @@
+INSERT INTO course_java_data_persistence.dao.artist (name, country)
+VALUES ('SR', 'UK'),
+       ('21 Savage', 'USA'),
+       ('Gzuz', 'Germany'),
+       ('OBLADAET', 'Russia'),
+       ('Kizaru', 'Russia'),
+       ('Key Glock', 'USA'),
+       ('Pop Smoke', 'USA'),
+       ('Loski', 'UK');
+
+INSERT INTO course_java_data_persistence.dao.song (title, album, recorded, length)
+VALUES ('Welcome to Brixton', 'Welcome to Brixton', 2020, '3:17'),
+       ('Real Nigga', 'Savage Mode', 2016, '3:05'),
+       ('Was Hast Du Gedacht', 'Wolke 7', 2018, '3:08'),
+       ('DAVID BECKHAM', 'PLAYERS CLUB', 2021, '3:19'),
+       ('So Icy Nihao', 'BANDANA 1', 2021, '2:33'),
+       ('Big Boy!', 'Yellow Tape', 2020, '2:58'),
+       ('Element', 'Meet The Woo 2', 2020, '2:15'),
+       ('P.U.G', 'Censored', 2021, '3:28'),
+       ('Brucky 2.0', 'Brucky 2.0', 2021, '3:05'),
+       ('Bank Account', 'Issa Album', 2017, '3:40'),
+       ('Warum', 'Wolke 7', 2018, '3:52'),
+       ('FOR MULA', 'PLAYERS CLUB', 2021, '3:02'),
+       ('Narcos', 'Born to Trap', 2020, '3:03'),
+       ('Dough', 'Yellow Tape', 2020, '3:20'),
+       ('Armed N Dangerous', 'Meet The Woo 2', 2020, '2:26'),
+       ('Rolling Dice', 'Censored', 2021, '3:15');
+
+INSERT INTO course_java_data_persistence.dao.artist_song_link (artist_id, song_id)
+VALUES (1, 1),
+       (2, 2),
+       (3, 3),
+       (4, 4),
+       (5, 5),
+       (6, 6),
+       (7, 7),
+       (8, 8),
+       (1, 9),
+       (2, 10),
+       (3, 11),
+       (4, 12),
+       (5, 13),
+       (6, 14),
+       (7, 15),
+       (8, 16);
