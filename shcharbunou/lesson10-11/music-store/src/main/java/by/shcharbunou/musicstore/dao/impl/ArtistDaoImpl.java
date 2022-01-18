@@ -37,7 +37,7 @@ public class ArtistDaoImpl implements ArtistDao {
         ConnectionManager connectionManager = ConnectionManager.getInstance();
         try (Connection connection = connectionManager.getConnection()) {
             String sqlQuery = "INSERT INTO course_java_data_persistence.dao.artist (name, country) " +
-                    "VALUES (?, ?)";
+                    "VALUES (?, ?);";
             try (PreparedStatement preparedStatement =
                          connection.prepareStatement(sqlQuery, Statement.RETURN_GENERATED_KEYS)) {
                 preparedStatement.setString(1, artist.getName());
@@ -61,7 +61,7 @@ public class ArtistDaoImpl implements ArtistDao {
         try (Connection connection = connectionManager.getConnection()) {
             String sqlQuery = "SELECT * " +
                     "FROM course_java_data_persistence.dao.artist " +
-                    "WHERE name = ?";
+                    "WHERE name = ?;";
             try (PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery)) {
                 preparedStatement.setString(1, name);
                 ResultSet resultSet = preparedStatement.executeQuery();
@@ -84,7 +84,7 @@ public class ArtistDaoImpl implements ArtistDao {
         try (Connection connection = connectionManager.getConnection()) {
             String sqlQuery = "SELECT * " +
                     "FROM course_java_data_persistence.dao.artist " +
-                    "WHERE artist_id = ?";
+                    "WHERE artist_id = ?;";
             try (PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery)) {
                 preparedStatement.setLong(1, id);
                 ResultSet resultSet = preparedStatement.executeQuery();
@@ -109,7 +109,7 @@ public class ArtistDaoImpl implements ArtistDao {
                     "FROM course_java_data_persistence.dao.artist AS a " +
                     "JOIN course_java_data_persistence.dao.artist_song_link AS asl ON a.artist_id = asl.artist_id " +
                     "JOIN course_java_data_persistence.dao.song AS s ON asl.song_id = s.song_id " +
-                    "WHERE a.artist_id = ?";
+                    "WHERE a.artist_id = ?;";
             try (PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery)) {
                 preparedStatement.setLong(1, artist.getId());
                 ResultSet resultSet = preparedStatement.executeQuery();
@@ -136,7 +136,7 @@ public class ArtistDaoImpl implements ArtistDao {
             String sqlQuery = "SELECT a.name, a.country " +
                     "FROM course_java_data_persistence.dao.artist AS a " +
                     "LIMIT ? " +
-                    "OFFSET ?";
+                    "OFFSET ?;";
             try (PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery)) {
                 preparedStatement.setLong(1, pageSize);
                 preparedStatement.setLong(2, Long.parseLong(counter.toString()));
@@ -159,7 +159,7 @@ public class ArtistDaoImpl implements ArtistDao {
         try (Connection connection = connectionManager.getConnection()) {
             String sqlQuery = "DELETE " +
                     "FROM course_java_data_persistence.dao.artist " +
-                    "WHERE artist_id = ?";
+                    "WHERE artist_id = ?;";
             try (PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery)) {
                 preparedStatement.setLong(1, artist.getId());
                 preparedStatement.executeUpdate();
@@ -177,7 +177,7 @@ public class ArtistDaoImpl implements ArtistDao {
         try (Connection connection = connectionManager.getConnection()) {
             String sqlQuery = "UPDATE course_java_data_persistence.dao.artist " +
                     "SET name = ?, country = ? " +
-                    "WHERE artist_id = ?";
+                    "WHERE artist_id = ?;";
             try (PreparedStatement preparedStatement =
                          connection.prepareStatement(sqlQuery, Statement.RETURN_GENERATED_KEYS)) {
                 preparedStatement.setString(1, updatedName);

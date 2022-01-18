@@ -37,7 +37,7 @@ public class SongDaoImpl implements SongDao {
         ConnectionManager connectionManager = ConnectionManager.getInstance();
         try (Connection connection = connectionManager.getConnection()) {
             String sql = "INSERT INTO course_java_data_persistence.dao.song " +
-                    "VALUES (?, ?, ?, ?)";
+                    "VALUES (?, ?, ?, ?);";
             try (PreparedStatement preparedStatement =
                          connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
                 preparedStatement.setString(1, song.getTitle());
@@ -63,7 +63,7 @@ public class SongDaoImpl implements SongDao {
         try (Connection connection = connectionManager.getConnection()) {
             String sql = "SELECT * " +
                     "FROM course_java_data_persistence.dao.song AS s " +
-                    "WHERE s.title = ?";
+                    "WHERE s.title = ?;";
             try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
                 preparedStatement.setString(1, title);
                 ResultSet resultSet = preparedStatement.executeQuery();
@@ -90,7 +90,7 @@ public class SongDaoImpl implements SongDao {
             String sql = "SELECT s.title, s.album, s.recorded, s.length " +
                     "FROM course_java_data_persistence.dao.song AS s " +
                     "LIMIT ? " +
-                    "OFFSET ?";
+                    "OFFSET ?;";
             try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
                 preparedStatement.setLong(1, pageSize);
                 preparedStatement.setLong(2, Long.parseLong(counter.toString()));
@@ -121,7 +121,7 @@ public class SongDaoImpl implements SongDao {
                     "JOIN course_java_data_persistence.dao.artist AS a ON asl.artist_id = a.artist_id " +
                     "WHERE a.artist_id = ? " +
                     "LIMIT ? " +
-                    "OFFSET ?";
+                    "OFFSET ?;";
             try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
                 preparedStatement.setLong(1, artist.getId());
                 preparedStatement.setLong(2, pageSize);
@@ -147,7 +147,7 @@ public class SongDaoImpl implements SongDao {
         try (Connection connection = connectionManager.getConnection()) {
             String sql = "DELETE " +
                     "FROM course_java_data_persistence.dao.song " +
-                    "WHERE song_id = ?";
+                    "WHERE song_id = ?;";
             try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
                 preparedStatement.setLong(1, song.getId());
                 preparedStatement.executeUpdate();
@@ -165,7 +165,7 @@ public class SongDaoImpl implements SongDao {
         try (Connection connection = connectionManager.getConnection()) {
             String sql = "UPDATE course_java_data_persistence.dao.song " +
                     "SET title = ?, album = ?, recorded = ?, length = ? " +
-                    "WHERE song_id = ?";
+                    "WHERE song_id = ?;";
             try (PreparedStatement preparedStatement =
                          connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
                 preparedStatement.setString(1, updatedTitle);
@@ -217,7 +217,7 @@ public class SongDaoImpl implements SongDao {
                     "FROM course_java_data_persistence.dao.song AS s " +
                     "JOIN course_java_data_persistence.dao.artist_song_link AS asl ON s.song_id = asl.song_id " +
                     "JOIN course_java_data_persistence.dao.artist AS a ON asl.artist_id = a.artist_id " +
-                    "WHERE a.artist_id = ?";
+                    "WHERE a.artist_id = ?;";
             try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
                 preparedStatement.setLong(1, artist.getId());
                 ResultSet resultSet = preparedStatement.executeQuery();
