@@ -16,7 +16,7 @@
         <br>
     </fieldset>
     <br>
-    <input type="submit" value="Send">
+    <input type="submit" value="Submit">
 </form><br>
 <p><a href="${pageContext.request.contextPath}/index.jsp">Main Page</a></p>
 </body>
