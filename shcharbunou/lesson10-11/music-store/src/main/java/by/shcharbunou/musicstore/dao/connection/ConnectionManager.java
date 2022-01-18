@@ -6,7 +6,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class ConnectionManager {
-    private static final String DATASOURCE_URL = "jdbc:postgresql://localhost:5432/course_java_data_persistence";
+    private static final String DATASOURCE_URL = "jdbc:postgresql://ec2-54-145-133-219.compute-1.amazonaws.com:5432/course_java_data_persistence";
     private static final String DATASOURCE_USER = "postgres";
     private static final String DATASOURCE_PASSWORD = "12345678";
     private static ConnectionManager instance = null;

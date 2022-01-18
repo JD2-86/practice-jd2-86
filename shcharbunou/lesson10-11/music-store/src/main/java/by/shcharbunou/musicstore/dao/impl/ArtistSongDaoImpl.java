@@ -112,7 +112,7 @@ public class ArtistSongDaoImpl implements ArtistSongDao {
                 preparedStatement.setLong(2, song.getId());
                 ResultSet resultSet = preparedStatement.executeQuery();
                 if (resultSet.next()) {
-                    artistSongPair = resultSet.getString("name") + " | "
+                    artistSongPair = resultSet.getString("name") + " : "
                             + resultSet.getString("title");
                 }
             }
