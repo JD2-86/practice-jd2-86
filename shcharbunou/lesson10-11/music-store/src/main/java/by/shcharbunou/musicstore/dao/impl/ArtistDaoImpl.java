@@ -184,7 +184,7 @@ public class ArtistDaoImpl implements ArtistDao {
                 preparedStatement.setString(2, updatedCountry);
                 preparedStatement.setLong(3, artist.getId());
                 preparedStatement.executeUpdate();
-                ResultSet resultSet = preparedStatement.getResultSet();
+                ResultSet resultSet = preparedStatement.getGeneratedKeys();
                 if (resultSet.next()) {
                     newArtist.setId(resultSet.getLong("artist_id"));
                     newArtist.setName(resultSet.getString("name"));
