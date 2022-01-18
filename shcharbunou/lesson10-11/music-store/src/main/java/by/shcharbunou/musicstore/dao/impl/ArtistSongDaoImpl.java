@@ -14,7 +14,7 @@ public class ArtistSongDaoImpl implements ArtistSongDao {
     private ArtistSongDaoImpl() {
     }
 
-    public ArtistSongDaoImpl getInstance() {
+    public static ArtistSongDaoImpl getInstance() {
         ArtistSongDaoImpl localInstance = instance;
         if (localInstance == null) {
             synchronized (ArtistSongDaoImpl.class) {

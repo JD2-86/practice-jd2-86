@@ -19,7 +19,7 @@ public class SongDaoImpl implements SongDao {
     private SongDaoImpl() {
     }
 
-    public SongDaoImpl getInstance() {
+    public static SongDaoImpl getInstance() {
         SongDaoImpl localInstance = instance;
         if (localInstance == null) {
             synchronized (SongDaoImpl.class) {

@@ -19,7 +19,7 @@ public class ArtistDaoImpl implements ArtistDao {
     private ArtistDaoImpl() {
     }
 
-    public ArtistDaoImpl getInstance() {
+    public static ArtistDaoImpl getInstance() {
         ArtistDaoImpl localInstance = instance;
         if (localInstance == null) {
             synchronized (ArtistDaoImpl.class) {
