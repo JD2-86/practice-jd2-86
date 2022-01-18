@@ -5,7 +5,7 @@
 <hibernate-configuration>
     <session-factory>
         <property name="connection.driver_class">org.testcontainers.jdbc.ContainerDatabaseDriver</property>
-        <property name="connection.url">jdbc:tc:postgresql:14.1:///course_java_data_persistence?currentSchema=intro_hibernate</property>
+        <property name="connection.url">jdbc:tc:postgresql:14.1:///course_java_data_persistence</property>
         <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
         <property name="hbm2ddl.auto">create-drop</property>
         <property name="format_sql">true</property>
