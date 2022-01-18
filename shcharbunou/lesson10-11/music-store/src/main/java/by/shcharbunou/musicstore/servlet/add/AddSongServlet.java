@@ -1,4 +1,4 @@
-package by.shcharbunou.musicstore.servlet;
+package by.shcharbunou.musicstore.servlet.add;
 
 import by.shcharbunou.musicstore.dao.ArtistDao;
 import by.shcharbunou.musicstore.dao.ArtistSongDao;
@@ -16,38 +16,36 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "DeleteSongServlet", value = "/delete-song")
-public class DeleteSongServlet extends HttpServlet {
+@WebServlet(name = "AddSongServlet", value = "/add-song")
+public class AddSongServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doDelete(request, response);
-    }
-
-    @Override
-    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String artistName = req.getParameter("artist");
-        String songTitle = req.getParameter("song");
-        ArtistSongDao artistSongDao = ArtistSongDaoImpl.getInstance();
+        String artistName = request.getParameter("artist");
+        String title = request.getParameter("title");
+        String album = request.getParameter("album");
+        int recorded = Integer.parseInt(request.getParameter("recorded"));
+        String length = request.getParameter("length");
+        Song song = new Song();
+        song.setTitle(title);
+        song.setAlbum(album);
+        song.setRecorded(recorded);
+        song.setLength(length);
+        request.setAttribute("song", song);
         ArtistDao artistDao = ArtistDaoImpl.getInstance();
         SongDao songDao = SongDaoImpl.getInstance();
+        ArtistSongDao artistSongDao = ArtistSongDaoImpl.getInstance();
         try {
-            List<Song> songs = songDao.findByTitle(songTitle);
-            if (songs.size() != 1) {
-                throw new DatabaseException();
-            }
-            Song song = songs.get(0);
+            songDao.save(song);
             List<Artist> artists = artistDao.findByName(artistName);
             if (artists.size() != 1) {
                 throw new DatabaseException();
             }
             Artist artist = artists.get(0);
-            req.setAttribute("artist", artist);
-            req.setAttribute("song", song);
-            songDao.delete(song);
-            artistSongDao.deleteSong(song);
-            getServletContext().getRequestDispatcher("/jsp-content/song.jsp").forward(req, resp);
+            request.setAttribute("artist", artist);
+            artistSongDao.save(artist, song);
+            getServletContext().getRequestDispatcher("/jsp-content/song.jsp").forward(request, response);
         } catch (DatabaseException e) {
-            getServletContext().getRequestDispatcher("/jsp-content/error.jsp").forward(req, resp);
+            getServletContext().getRequestDispatcher("/jsp-content/error.jsp").forward(request, response);
         }
     }
 }

@@ -1,4 +1,4 @@
-package by.shcharbunou.musicstore.servlet;
+package by.shcharbunou.musicstore.servlet.update;
 
 import by.shcharbunou.musicstore.dao.ArtistDao;
 import by.shcharbunou.musicstore.dao.ArtistSongDao;
