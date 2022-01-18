@@ -23,9 +23,9 @@ public class AddArtistServlet extends HttpServlet {
         ArtistDao artistDao = ArtistDaoImpl.getInstance();
         try {
             artistDao.save(artist);
-            getServletContext().getRequestDispatcher("/WEB-INF/artist.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/jsp-content/artist.jsp").forward(request, response);
         } catch (DatabaseException e) {
-            getServletContext().getRequestDispatcher("/WEB-INF/error.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/jsp-content/error.jsp").forward(request, response);
         }
     }
 }

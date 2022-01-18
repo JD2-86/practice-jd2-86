@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -7,10 +8,10 @@
 <body>
 <h1 align="center">Project 'Music Store'</h1>
 <ul>
-    <li><p><a href="WEB-INF/index-add.jsp">ADD</a></p></li>
-    <li><p><a href="WEB-INF/index-update.jsp">UPDATE</a></p></li>
-    <li><p><a href="WEB-INF/index-get.jsp">GET</a></p></li>
-    <li><p><a href="WEB-INF/index-delete.jsp">DELETE</a></p></li>
+    <li><p><a href="jsp-content/index-add.jsp">ADD</a></p></li>
+    <li><p><a href="jsp-content/index-update.jsp">UPDATE</a></p></li>
+    <li><p><a href="jsp-content/index-get.jsp">GET</a></p></li>
+    <li><p><a href="jsp-content/index-delete.jsp">DELETE</a></p></li>
 </ul>
 </body>
 </html>

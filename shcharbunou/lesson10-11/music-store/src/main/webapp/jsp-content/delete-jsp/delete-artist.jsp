@@ -8,7 +8,7 @@
 <form action="<c:url value="/delete-artist"/>" method="post">
     <fieldset>
         <legend>Delete artist</legend>
-        <label for="name">Artist</label>
+        <label for="name">Name</label>
         <input name="name" id="name" type="text" required oninvalid="this.setCustomValidity('Enter artist')" oninput="setCustomValidity('')">
         <br>
     </fieldset>

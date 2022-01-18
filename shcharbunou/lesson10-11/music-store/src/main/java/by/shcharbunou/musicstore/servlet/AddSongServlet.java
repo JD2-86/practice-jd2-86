@@ -43,9 +43,9 @@ public class AddSongServlet extends HttpServlet {
             Artist artist = artists.get(0);
             request.setAttribute("artist", artist);
             artistSongDao.save(artist, song);
-            getServletContext().getRequestDispatcher("/WEB-INF/song.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/jsp-content/song.jsp").forward(request, response);
         } catch (DatabaseException e) {
-            getServletContext().getRequestDispatcher("/WEB-INF/error.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/jsp-content/error.jsp").forward(request, response);
         }
     }
 }
