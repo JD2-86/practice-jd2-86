@@ -14,7 +14,7 @@ public interface ArtistDao {
 
     Artist findById(Long id) throws DatabaseException;
 
-    List<Song> findAllSongs(Artist artist) throws DatabaseException;
+    Map<Long, Song> findAllSongs(Artist artist) throws DatabaseException;
 
     Map<Long, Artist> findAllArtists(long page, long pageSize) throws DatabaseException;
 

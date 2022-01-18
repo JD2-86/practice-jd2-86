@@ -101,9 +101,10 @@ public class ArtistDaoImpl implements ArtistDao {
     }
 
     @Override
-    public List<Song> findAllSongs(Artist artist) throws DatabaseException {
+    public Map<Long, Song> findAllSongs(Artist artist) throws DatabaseException {
         ConnectionManager connectionManager = ConnectionManager.getInstance();
-        List<Song> songs = new ArrayList<>();
+        AtomicLong counter = new AtomicLong(0);
+        Map<Long, Song> songs = new HashMap<>();
         try (Connection connection = connectionManager.getConnection()) {
             String sqlQuery = "SELECT s.title, s.album, s.recorded, s.length " +
                     "FROM course_java_data_persistence.dao.artist AS a " +
@@ -114,7 +115,7 @@ public class ArtistDaoImpl implements ArtistDao {
                 preparedStatement.setLong(1, artist.getId());
                 ResultSet resultSet = preparedStatement.executeQuery();
                 while (resultSet.next()) {
-                    songs.add(new Song(resultSet.getLong("song_id"),
+                    songs.put(counter.incrementAndGet(), new Song(counter.get(),
                             resultSet.getString("title"),
                             resultSet.getString("album"),
                             resultSet.getInt("recorded"),
