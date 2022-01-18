@@ -27,7 +27,7 @@ public class GetArtistSongsServlet extends HttpServlet {
             Map<Long, Song> songs = artistDao.findAllSongs(artist);
             request.setAttribute("songs", songs);
             request.setAttribute("artist", artist);
-            getServletContext().getRequestDispatcher("/jsp-content/get-jsp/get-songs.jsp").forward(request,response);
+            getServletContext().getRequestDispatcher("/jsp-content/artist-songs.jsp").forward(request,response);
         } catch (DatabaseException e) {
             getServletContext().getRequestDispatcher("/jsp-content/error.jsp").forward(request,response);
         }

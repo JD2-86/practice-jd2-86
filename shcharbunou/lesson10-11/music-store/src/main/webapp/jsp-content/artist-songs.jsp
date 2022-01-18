@@ -37,6 +37,6 @@
     </c:forEach>
 </c:if>
 <br>
-<p><a href="${pageContext.request.contextPath}/jsp-content/get-jsp/get-artist-songs.jsp">Main Page</a></p>
+<p><a href="${pageContext.request.contextPath}/index.jsp">Main Page</a></p>
 </body>
 </html>
