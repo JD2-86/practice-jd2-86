@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <changeSet id="dao-schema-1" author="rakovets">
+        <createTable schemaName="dao" tableName="artist">
+            <column name="artist_id" type="INTEGER" autoIncrement="true">
+                <constraints primaryKey="true"
+                             primaryKeyName="pk_artist"
+                             unique="true"
+                             nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(128)">
+                <constraints unique="true"
+                             nullable="false"/>
+            </column>
+            <column name="country" type="VARCHAR(128)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable schemaName="dao" tableName="artist" cascadeConstraints="true"/>
+        </rollback>
+    </changeSet>
+    <changeSet id="dao-schema-2" author="rakovets">
+        <createTable schemaName="dao" tableName="song">
+            <column name="song_id" type="INTEGER" autoIncrement="true">
+                <constraints primaryKey="true"
+                             primaryKeyName="pk_song"
+                             unique="true"
+                             nullable="false"/>
+            </column>
+            <column name="title" type="VARCHAR(128)">
+                <constraints unique="true"
+                             nullable="false"/>
+            </column>
+            <column name="album" type="VARCHAR(128)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="recorded" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="length" type="VARCHAR(8)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable schemaName="dao" tableName="song" cascadeConstraints="true"/>
+        </rollback>
+    </changeSet>
+    <changeSet id="dao-schema-3" author="rakovets">
+        <createTable schemaName="dao" tableName="artist_song_link">
+            <column name="artist_id" type="INTEGER">
+                <constraints foreignKeyName="fk_artist"
+                             referencedTableSchemaName="dao"
+                             referencedTableName="artist"
+                             referencedColumnNames="artist_id"
+                             nullable="false"/>
+            </column>
+            <column name="song_id" type="INTEGER">
+                <constraints foreignKeyName="fk_song"
+                             referencedTableSchemaName="dao"
+                             referencedTableName="song"
+                             referencedColumnNames="song_id"
+                             nullable="false"/>
+            </column>
+        </createTable>
+        <addPrimaryKey schemaName="dao" tableName="artist_song_link" columnNames="artist_id,song_id"/>
+
+        <rollback>
+            <dropTable schemaName="dao" tableName="artist_song_link" cascadeConstraints="true"/>
+        </rollback>
+    </changeSet>
+    <changeSet id="dao-schema-restaurant" author="rakovets">
+        <createTable schemaName="dao" tableName="restaurant">
+            <column name="restaurant_id" type="INTEGER" autoIncrement="true">
+                <constraints primaryKey="true"
+                             primaryKeyName="pk_restaurant"
+                             unique="true"
+                             nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(128)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable schemaName="dao" tableName="review">
+            <column name="review_id" type="INTEGER" autoIncrement="true">
+                <constraints primaryKey="true"
+                             primaryKeyName="pk_review"
+                             unique="true"
+                             nullable="false"/>
+            </column>
+            <column name="content" type="VARCHAR(256)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="restaurant_id" type="INTEGER">
+                <constraints foreignKeyName="fk_review_restaurant_id"
+                             referencedTableSchemaName="dao"
+                             referencedTableName="restaurant"
+                             referencedColumnNames="restaurant_id"
+                             nullable="false"/>
+            </column>
+        </createTable>
+        <createTable schemaName="dao" tableName="dish">
+            <column name="dish_id" type="INTEGER" autoIncrement="true">
+                <constraints primaryKey="true"
+                             primaryKeyName="pk_dish"
+                             unique="true"
+                             nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(128)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable schemaName="dao" tableName="restaurant_dish_link">
+            <column name="restaurant_id" type="INTEGER">
+                <constraints foreignKeyName="fk_restaurant_dish_link_restaurant_id"
+                             referencedTableSchemaName="dao"
+                             referencedTableName="restaurant"
+                             referencedColumnNames="restaurant_id"
+                             nullable="false"/>
+            </column>
+            <column name="dish_id" type="INTEGER">
+                <constraints foreignKeyName="fk_restaurant_dish_link_dish_id"
+                             referencedTableSchemaName="dao"
+                             referencedTableName="dish"
+                             referencedColumnNames="dish_id"
+                             nullable="false"/>
+            </column>
+        </createTable>
+        <addPrimaryKey schemaName="dao" tableName="restaurant_dish_link" columnNames="restaurant_id,dish_id"/>
+
+        <rollback>
+            <dropTable schemaName="dao" tableName="restaurant" cascadeConstraints="true"/>
+            <dropTable schemaName="dao" tableName="review" cascadeConstraints="true"/>
+            <dropTable schemaName="dao" tableName="dish" cascadeConstraints="true"/>
+            <dropTable schemaName="dao" tableName="restaurant_dish_link" cascadeConstraints="true"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>
