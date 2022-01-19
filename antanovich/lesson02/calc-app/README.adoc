@@ -1,0 +1,3 @@
+= Homework 02
+
+== Calculator maven-archetype-quickstart
