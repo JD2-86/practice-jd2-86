@@ -1,0 +1,23 @@
+<Configuration name="ConfigTest" status="ERROR" monitorInterval="5">
+    <Appenders>
+
+        <SystemPropertyArbiter propertyName="env" propertyValue="dev">
+            <Console name="Out">
+                <PatternLayout pattern="%m%n"/>
+            </Console>
+        </SystemPropertyArbiter>
+        <SystemPropertyArbiter propertyName="env" propertyValue="prod">
+            <List name="Out">
+            </List>
+        </SystemPropertyArbiter>
+
+    </Appenders>
+    <Loggers>
+        <Logger name="org.apache.test" level="trace" additivity="false">
+            <AppenderRef ref="Out"/>
+        </Logger>
+        <Root level="error">
+            <AppenderRef ref="Out"/>
+        </Root>
+    </Loggers>
+</Configuration>
