@@ -9,11 +9,15 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import jakarta.persistence.EnumType;
+import jakarta.persistence.Embedded;
+import jakarta.persistence.AttributeOverrides;
+import jakarta.persistence.AttributeOverride;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.EqualsAndHashCode;
 
 import java.time.Duration;
 import java.time.LocalDate;
@@ -26,6 +30,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "employee_catalog")
 public class Employee extends BaseEntity {
@@ -37,8 +42,8 @@ public class Employee extends BaseEntity {
     @Column(name = "first_name")
     private String firstName;
 
-    @Column(name = "second_name")
-    private String secondName;
+    @Column(name = "last_name")
+    private String lastName;
 
     @Column(name = "position")
     @Enumerated(EnumType.STRING)
@@ -59,6 +64,23 @@ public class Employee extends BaseEntity {
     @Column(name = "daily_meeting_duration")
     private Duration dailyMeetingDuration;
 
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "country",column = @Column(name = "home_address_country")),
+            @AttributeOverride(name = "region",column = @Column(name = "home_address_region")),
+            @AttributeOverride(name = "city",column = @Column(name = "home_address_city")),
+            @AttributeOverride(name = "street",column = @Column(name = "home_address_street")),
+            @AttributeOverride(name = "apartment",column = @Column(name = "home_address_apartment")),
+    })
+    private AddressSet homeAddress;
 
-
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "country",column = @Column(name = "work_address_country")),
+            @AttributeOverride(name = "region",column = @Column(name = "work_address_region")),
+            @AttributeOverride(name = "city",column = @Column(name = "work_address_city")),
+            @AttributeOverride(name = "street",column = @Column(name = "work_address_street")),
+            @AttributeOverride(name = "apartment",column = @Column(name = "work_address_apartment")),
+    })
+    private AddressSet workAddress;
 }
