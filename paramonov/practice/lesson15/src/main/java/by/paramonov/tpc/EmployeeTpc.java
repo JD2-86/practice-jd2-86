@@ -16,7 +16,7 @@ import java.util.UUID;
 public abstract class EmployeeTpc {
     @Id
     @Column(name = "id_tpc_employee")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "uuid")
     @Getter
     @Setter
     private UUID employeeID;

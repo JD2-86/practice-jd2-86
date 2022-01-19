@@ -13,6 +13,8 @@
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
 
-        <mapping class="by.paramonov.employee.Employee"/>
-    </session-factory>
+        <mapping class="by.paramonov.tpc.EmployeeTpc"/>
+        <mapping class="by.paramonov.tpc.ContractEmployeeTpc"/>
+        <mapping class="by.paramonov.tpc.PersistentEmployeeTpc"/>
+            </session-factory>
 </hibernate-configuration>
