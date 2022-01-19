@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/course_java_data_persistence?currentSchema=mapping_inheritance</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">1234</property>
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hbm2ddl.auto">update</property>
+        <property name="format_sql">true</property>
+
+        <!-- Table Per Concrete Class -->
+        <mapping class="by.zhigalko.hibernate.mapping.inheritance.dal.entity.tpc.BaseEntity"/>
+        <mapping class="by.zhigalko.hibernate.mapping.inheritance.dal.entity.tpc.Employee"/>
+        <mapping class="by.zhigalko.hibernate.mapping.inheritance.dal.entity.tpc.ContractTpcEmployee"/>
+        <mapping class="by.zhigalko.hibernate.mapping.inheritance.dal.entity.tpc.PersistentTpcEmployee"/>
+
+<!--        &lt;!&ndash; Table Per Hierarchy Class &ndash;&gt;-->
+<!--        <mapping class="by.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tph.BaseEntity"/>-->
+<!--        <mapping class="by.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tph.EmployeeTphEntity"/>-->
+<!--        <mapping class="by.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tph.ManagerTphEntity"/>-->
+<!--        <mapping class="by.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tph.ProgrammerTphEntity"/>-->
+
+<!--        &lt;!&ndash; Table Per Subclass &ndash;&gt;-->
+<!--        <mapping class="by.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tps.BaseEntity"/>-->
+<!--        <mapping class="by.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tps.EmployeeTpsEntity"/>-->
+<!--        <mapping class="by.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tps.ManagerTpsEntity"/>-->
+<!--        <mapping class="by.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tps.ProgrammerTpsEntity"/>-->
+
+<!--        <mapping class="by.rakovets.course.datapersistence.mapping.inheritance.enemy.dal.entity.BaseEntity"/>-->
+<!--        <mapping class="by.rakovets.course.datapersistence.mapping.inheritance.enemy.dal.entity.EnemyEntity"/>-->
+<!--        <mapping class="by.rakovets.course.datapersistence.mapping.inheritance.enemy.dal.entity.ArmoredEnemyEntity"/>-->
+<!--        <mapping class="by.rakovets.course.datapersistence.mapping.inheritance.enemy.dal.entity.InvisibleEnemyEntity"/>-->
+<!--        <mapping class="by.rakovets.course.datapersistence.mapping.inheritance.enemy.dal.entity.RangedEnemyEntity"/>-->
+    </session-factory>
+</hibernate-configuration>
