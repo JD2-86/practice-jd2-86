@@ -1,10 +1,11 @@
-package by.zhigalko.hibernate.mapping.inheritance.dal.entity.tpc;
+package by.zhigalko.hibernate.mapping.inheritance.dal.entity.tps;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.persistence.PrimaryKeyJoinColumn;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,8 +20,9 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString(callSuper = true)
-@Table(name = "tpc_contract_employee")
-public class ContractTpcEmployee extends EmployeeTpc {
+@Table(name = "tps_contract_employee")
+@PrimaryKeyJoinColumn(name = "id")
+public class ContractTpsEmployee extends EmployeeTps {
     @Column(name = "contract_number")
     private String contractNumber;
 

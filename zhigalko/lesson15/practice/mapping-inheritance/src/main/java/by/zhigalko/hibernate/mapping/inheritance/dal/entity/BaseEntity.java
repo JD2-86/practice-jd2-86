@@ -1,4 +1,4 @@
-package by.zhigalko.hibernate.mapping.inheritance.dal.entity.tpc;
+package by.zhigalko.hibernate.mapping.inheritance.dal.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -14,7 +14,6 @@ import java.util.UUID;
 public abstract class BaseEntity {
     @Id
     @GeneratedValue(generator = "uuid")
-
     @Column(name = "id")
     private UUID id;
 }

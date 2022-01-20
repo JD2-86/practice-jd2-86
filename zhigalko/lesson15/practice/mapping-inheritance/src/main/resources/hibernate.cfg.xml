@@ -12,28 +12,20 @@
         <property name="hbm2ddl.auto">update</property>
         <property name="format_sql">true</property>
 
-        <!-- Table Per Concrete Class -->
-        <mapping class="by.zhigalko.hibernate.mapping.inheritance.dal.entity.tpc.BaseEntity"/>
-        <mapping class="by.zhigalko.hibernate.mapping.inheritance.dal.entity.tpc.Employee"/>
+<!--        Table Per Class-->
+        <mapping class="by.zhigalko.hibernate.mapping.inheritance.dal.entity.BaseEntity"/>
+        <mapping class="by.zhigalko.hibernate.mapping.inheritance.dal.entity.tpc.EmployeeTpc"/>
         <mapping class="by.zhigalko.hibernate.mapping.inheritance.dal.entity.tpc.ContractTpcEmployee"/>
         <mapping class="by.zhigalko.hibernate.mapping.inheritance.dal.entity.tpc.PersistentTpcEmployee"/>
 
-<!--        &lt;!&ndash; Table Per Hierarchy Class &ndash;&gt;-->
-<!--        <mapping class="by.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tph.BaseEntity"/>-->
-<!--        <mapping class="by.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tph.EmployeeTphEntity"/>-->
-<!--        <mapping class="by.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tph.ManagerTphEntity"/>-->
-<!--        <mapping class="by.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tph.ProgrammerTphEntity"/>-->
+<!--        Table Per Hierarchy-->
+        <mapping class="by.zhigalko.hibernate.mapping.inheritance.dal.entity.tph.EmployeeTph"/>
+        <mapping class="by.zhigalko.hibernate.mapping.inheritance.dal.entity.tph.ContractTphEmployee"/>
+        <mapping class="by.zhigalko.hibernate.mapping.inheritance.dal.entity.tph.PersistentTphEmployee"/>
 
-<!--        &lt;!&ndash; Table Per Subclass &ndash;&gt;-->
-<!--        <mapping class="by.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tps.BaseEntity"/>-->
-<!--        <mapping class="by.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tps.EmployeeTpsEntity"/>-->
-<!--        <mapping class="by.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tps.ManagerTpsEntity"/>-->
-<!--        <mapping class="by.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tps.ProgrammerTpsEntity"/>-->
-
-<!--        <mapping class="by.rakovets.course.datapersistence.mapping.inheritance.enemy.dal.entity.BaseEntity"/>-->
-<!--        <mapping class="by.rakovets.course.datapersistence.mapping.inheritance.enemy.dal.entity.EnemyEntity"/>-->
-<!--        <mapping class="by.rakovets.course.datapersistence.mapping.inheritance.enemy.dal.entity.ArmoredEnemyEntity"/>-->
-<!--        <mapping class="by.rakovets.course.datapersistence.mapping.inheritance.enemy.dal.entity.InvisibleEnemyEntity"/>-->
-<!--        <mapping class="by.rakovets.course.datapersistence.mapping.inheritance.enemy.dal.entity.RangedEnemyEntity"/>-->
+<!--        Table Per Subclass-->
+        <mapping class="by.zhigalko.hibernate.mapping.inheritance.dal.entity.tps.EmployeeTps"/>
+        <mapping class="by.zhigalko.hibernate.mapping.inheritance.dal.entity.tps.ContractTpsEmployee"/>
+        <mapping class="by.zhigalko.hibernate.mapping.inheritance.dal.entity.tps.PersistentTpsEmployee"/>
     </session-factory>
 </hibernate-configuration>

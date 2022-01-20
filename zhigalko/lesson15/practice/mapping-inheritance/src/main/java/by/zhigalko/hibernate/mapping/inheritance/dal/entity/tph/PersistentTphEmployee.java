@@ -1,10 +1,10 @@
-package by.zhigalko.hibernate.mapping.inheritance.dal.entity.tpc;
+package by.zhigalko.hibernate.mapping.inheritance.dal.entity.tph;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.persistence.DiscriminatorValue;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,8 +19,8 @@ import java.time.LocalDate;
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "tpc_persistent_employee")
-public class PersistentTpcEmployee extends EmployeeTpc {
+@DiscriminatorValue("persistent_employee")
+public class PersistentTphEmployee extends EmployeeTph {
     @Temporal(TemporalType.DATE)
     @Column(name = "start_date")
     private LocalDate startDate;

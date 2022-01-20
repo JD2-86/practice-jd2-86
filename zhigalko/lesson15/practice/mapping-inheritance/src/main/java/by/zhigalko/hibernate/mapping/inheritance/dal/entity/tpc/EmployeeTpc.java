@@ -1,6 +1,10 @@
 package by.zhigalko.hibernate.mapping.inheritance.dal.entity.tpc;
 
-import jakarta.persistence.*;
+import by.zhigalko.hibernate.mapping.inheritance.dal.entity.BaseEntity;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
+import jakarta.persistence.Column;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -10,8 +14,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-@Table(name = "tpc_employees")
-public abstract class Employee extends BaseEntity{
+public abstract class EmployeeTpc extends BaseEntity {
     @Column(name = "first_name")
     private String firstName;
 

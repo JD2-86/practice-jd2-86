@@ -1,10 +1,11 @@
-package by.zhigalko.hibernate.mapping.inheritance.dal.entity.tpc;
+package by.zhigalko.hibernate.mapping.inheritance.dal.entity.tps;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,8 +20,9 @@ import java.time.LocalDate;
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "tpc_persistent_employee")
-public class PersistentTpcEmployee extends EmployeeTpc {
+@Table(name = "tps_persistent_employee")
+@PrimaryKeyJoinColumn(name = "id")
+public class PersistentTpsEmployee extends EmployeeTps {
     @Temporal(TemporalType.DATE)
     @Column(name = "start_date")
     private LocalDate startDate;
