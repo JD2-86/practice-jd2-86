@@ -1,24 +1,24 @@
 package by.zhigalko.hibernate.mapping.relationship.dal.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import java.time.LocalDate;
-import java.util.UUID;
 
 @Entity
 @Getter
 @Setter
+@ToString
+@EqualsAndHashCode(exclude = "role", callSuper = false)
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "user")
-public class User extends BaseEntity {
-    @Embedded
-    @AttributeOverride(name = "id", column = @Column(name = "role_id"))
-    private UUID uuid;
-
+@Table(name = "\"user\"")
+@AttributeOverride(name = "id", column = @Column(name = "user_id"))
+public class User extends BaseEntity{
     @Column(name = "username")
     private String username;
 
@@ -41,7 +41,7 @@ public class User extends BaseEntity {
     @Column(name = "birthday")
     private LocalDate birthday;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "role_id", nullable = false)
     private Role role;
 }
