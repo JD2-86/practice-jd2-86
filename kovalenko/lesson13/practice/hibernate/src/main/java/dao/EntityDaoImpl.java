@@ -16,6 +16,8 @@ public class EntityDaoImpl implements EntityDao{
     }
 
     public PaintingEntity findOne(Long id) {
+        Session session = SessionUtil.openSession();
+        session.getTransaction().begin();
         return null;
     }
 
