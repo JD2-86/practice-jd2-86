@@ -2,8 +2,12 @@
 
 == Lesson 4
 
-Link to AWS: http://ec2-54-145-133-219.compute-1.amazonaws.com:8080/maven-webapp-shcharbunouCV/
+Link to AWS: link:http://ec2-54-145-133-219.compute-1.amazonaws.com:8080/maven-webapp-shcharbunouCV/[maven-webapp-shcharbunouCV]
 
 == Lesson 5
 
-Link to AWS: http://ec2-54-145-133-219.compute-1.amazonaws.com:8080/user-management-web-application/ [user-management-web-application]
+Link to AWS: link:http://ec2-54-145-133-219.compute-1.amazonaws.com:8080/user-management-web-application/[user-management-web-application]
+
+== Lesson 6-7
+
+Link to AWS: link:http://ec2-54-145-133-219.compute-1.amazonaws.com:8080/superheroes/[superheroes]
