@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="user1" class="by.zhigalko.xml.model.User">
+        <property name="firstName" value="alex"/>
+        <property name="lastName" value="smith"/>
+        <property name="email" value="alex@smith.com"/>
+        <property name="username" value="alex-s"/>
+        <property name="password" value="qwerty"/>
+    </bean>
+    <bean id="user2" class="by.zhigalko.xml.model.User">
+        <property name="firstName" value="tom"/>
+        <property name="lastName" value="soyer"/>
+        <property name="email" value="tom@soyer.com"/>
+        <property name="username" value="tom-s"/>
+        <property name="password" value="qwerty123213"/>
+    </bean>
+    <bean id="user3" class="by.zhigalko.xml.model.User">
+        <property name="firstName" value="mary"/>
+        <property name="lastName" value="supp"/>
+        <property name="email" value="mary@supp.com"/>
+        <property name="username" value="mary-s"/>
+        <property name="password" value="!123qwerty"/>
+    </bean>
+
+    <bean id="userDao" class="by.zhigalko.xml.dao.UserDaoImpl">
+        <property name="users">
+            <list value-type="by.zhigalko.xml.model.User">
+                <ref bean="user1"/>
+                <ref bean="user2"/>
+                <ref bean="user3"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="userService" class="by.zhigalko.xml.service.UserServiceImpl">
+        <constructor-arg ref="userDao"/>
+    </bean>
+</beans>
